@@ -1,0 +1,92 @@
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  #page-container {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.minerva-input {
+  background: transparent;
+  border: none;
+  width: 250% !important;
+  height: 100% !important;
+  min-height: 40px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #000;
+  caret-color: #000 !important;
+  /* padding: 0 2px; */
+  box-sizing: border-box;
+  pointer-events: auto !important;
+  position: absolute;
+  top: -9px;
+  left: 0;
+  cursor: text;
+  z-index: 100;
+  outline: none;
+}
+
+/* Ensure background layers don't block interaction */
+.pf,
+.pc,
+.bi,
+.c,
+.t,
+.pi {
+  pointer-events: none !important;
+}
+
+/* Re-enable interaction for inputs and pads */
+.minerva-input,
+.photo-upload-container,
+.photo-upload-container *,
+.signature-pad-container,
+.signature-pad-container * {
+  pointer-events: auto !important;
+  display: block !important;
+}
+
+/* Force only the immediate text container (.t) of inputs to expand to fill the clipping box (.c) */
+.t:has(> .minerva-input) {
+  width: 250% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+}
+
+/* Ensure the input itself fills that space */
+.minerva-input {
+  width: 250% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.minerva-input:focus {
+  outline: none;
+  background: rgba(255, 255, 0, 0.2);
+  border-bottom-color: blue;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  background: #555;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+#page-container {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 1200px;
+}
