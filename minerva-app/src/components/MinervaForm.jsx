@@ -4201,25 +4201,7 @@ const MinervaForm = () => {
               />
             ))}
             {/* ID Input below signature */}
-            <input
-              type="text"
-              name="cedula_firma"
-              value={formData.cedula_firma}
-              onChange={handleInputChange}
-              className="absolute-input"
-              style={{
-                left: "63.697%",
-                top: "40.139%",
-                width: "22.985%",
-                height: "1.095%",
-                fontSize: "8px",
-                border: "none",
-                background: "transparent",
-                outline: "none",
-                pointerEvents: "auto",
-              }}
-              placeholder="C.C. No."
-            />
+
             <img
               className="bi x0 y0 w0 h0"
               alt=""
@@ -4386,6 +4368,30 @@ const MinervaForm = () => {
                 height: "5.2%",
                 borderBottom: "1px solid #000"
               }}
+            />
+            {/* ID Input next to C.C. No. line */}
+            <input
+              type="text"
+              name="cedula_firma"
+              value={formData.cedula_firma}
+              onChange={handleInputChange}
+              className="absolute-input"
+              style={{
+                position: "absolute",
+                left: "64.136%",
+                top: "39.970%", // Adjusted to align with Page 4 inner coordinates
+                width: "22.113%",
+                height: "1.2%",
+                fontSize: "12px",
+                border: "none",
+                borderBottom: "1px solid #000", // Make it visible
+                background: "transparent",
+                outline: "none",
+                color: "#000", // Ensure text is black
+                zIndex: 1000001,
+                pointerEvents: "auto",
+              }}
+              placeholder=""
             />
             <div className="t m7c x1d h55 y19c ff1 fs38 fc0 sc0 ls0 ws0">
               NOMBRE DEL ENTREVIST<span className="_ _0"></span>ADOR
@@ -4628,8 +4634,19 @@ const MinervaForm = () => {
               <div className="signature-overlay">
                 <SignaturePad />
               </div>
-              Primer entrevistador Segundo entrevistador Firma de quien autoriza
-              contratación
+              Primer entrevistador
+            </div>
+            <div
+              className="t m94 h60 y1c4 ff1 fs43 fc0 sc0 ls0 ws0"
+              style={{ left: "46%", position: "absolute" }}
+            >
+              Segundo entrevistador
+            </div>
+            <div
+              className="t m94 h60 y1c4 ff1 fs43 fc0 sc0 ls0 ws0"
+              style={{ left: "68%", position: "absolute" }}
+            >
+              Firma de quien autoriza contratación
             </div>
             <div className="t m1 xe5 hd y4b ff6 fsc fc2 sc0 ls0 ws0">4</div>
             <div className="c x6e y1c5 w7f h62">
