@@ -1,16 +1,79 @@
-# React + Vite
+# Minerva Form Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based web application for filling out the "Minerva 10-03" resume form. It provides an interactive interface with precise overlays for text inputs, checkboxes, and signature uploads, matching the layout of the standard physical form.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Digital Form Filling**: Accurately maps input fields to the background image of the Minerva 10-03 form.
+- **Overlay Checkboxes**: Custom checkbox components that align perfectly with the form's grid.
+- **Signature Support**: allowing users to draw or upload their signature with resize and drag capabilities (`react-rnd`).
+- **Data Persistence**: Form state is managed in React state (implementation detail).
+- **Responsive Design**: utilizing a container-based layout to maintain aspect ratio and alignment.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: CSS Modules / Standard CSS
+- **Libraries**:
+  - `react-rnd`: For draggable/resizable signature components.
+  - `react-signature-canvas`: For drawing signatures.
+  - `react-dropzone`: For file uploads.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Before you begin, ensure you have met the following requirements:
+
+- **Node.js**: version 18.x or higher recommended.
+- **npm**: usually comes with Node.js.
+
+## Installation
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/juandavid247/minerva.git
+    cd minerva/minerva-app
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    # or if you use yarn
+    yarn install
+    ```
+
+## Usage
+
+1.  **Start the development server**:
+    ```bash
+    npm run dev
+    ```
+
+2.  **Open the app**:
+    Open your browser and navigate to `http://localhost:5173` (or the port shown in your terminal).
+
+3.  **Build for production**:
+    ```bash
+    npm run build
+    ```
+    The build artifacts will be stored in the `dist/` directory.
+
+## Project Structure
+
+- `src/components/`: Contains React components like `MinervaForm`, `ImageUpload`, and `OverlayCheckbox`.
+- `src/data/`: Contains coordinate mapping files (e.g., `formCoordinates.js`) for precise input alignment.
+- `public/`: Static assets (background images, icons).
+
+## Contributing
+
+Contributions are always welcome!
+
+1.  Fork the project.
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
