@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import "./MinervaForm.css";
 import PhotoUpload from "./PhotoUpload";
 import SignaturePad from "./SignaturePad";
+import OverlayCheckbox from "./OverlayCheckbox";
+import ImageUpload from "./ImageUpload";
+import { PAGE_1_COORDINATES, PAGE_2_COORDINATES, PAGE_3_COORDINATES, PAGE_4_COORDINATES } from "../data/formCoordinates";
 
 const MinervaForm = () => {
   const [formData, setFormData] = useState({
+    cedula_firma: "",
     apellido_aspirante: "",
     aspiracion_salarial: "",
     cedula_expedida_en: "",
@@ -255,6 +259,18 @@ const MinervaForm = () => {
     tiempo_residencia: "",
   });
 
+  // Calibration State
+  const [calibrationPoints, setCalibrationPoints] = useState([]);
+  const [isCalibrationMode, setIsCalibrationMode] = useState(false);
+  const [overlayState, setOverlayState] = useState({});
+
+  const exportCalibrationData = () => {
+    console.log("--------------- COPIA DESDE AQUI ---------------");
+    console.log(JSON.stringify(calibrationPoints, null, 2));
+    console.log("--------------- HASTA AQUI ---------------");
+    alert("¡Puntos exportados a la consola! Por favor copia el texto entre las líneas y pégalo en el chat.");
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -264,17 +280,121 @@ const MinervaForm = () => {
     setFormData((prev) => ({ ...prev, [name]: checked }));
   };
 
-  const handleToggleX = (name) => {
-    setFormData((prev) => ({
+  const handleCalibrationClick = (e) => {
+    if (!isCalibrationMode) return;
+    // Debug: Log everything
+    console.log("Calibration Click Event on:", e.target.tagName, e.target.className);
+
+    // Check if clicking the export button
+    if (e.target.tagName === 'BUTTON') return;
+
+    const page = e.target.closest('.pf');
+    if (!page) {
+      console.warn("Click OUTSIDE page detected. Target:", e.target);
+      alert("Click no detectado dentro de una página. Asegúrate de hacer clic sobre el formulario.");
+      return;
+    }
+
+    const rect = page.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const leftPct = (x / rect.width) * 100;
+    const topPct = (y / rect.height) * 100;
+
+    const newPoint = {
+      page: page.id,
+      left: `${leftPct.toFixed(3)}%`,
+      top: `${topPct.toFixed(3)}%`,
+      id: `point_${Date.now()}`
+    };
+
+    setCalibrationPoints(prev => {
+      const newState = [...prev, newPoint];
+      console.log("State Updated. Count:", newState.length);
+      return newState;
+    });
+    console.log("Point Added:", newPoint);
+  };
+
+
+
+
+
+
+  const handleOverlayChange = (id) => {
+    setOverlayState(prev => ({
       ...prev,
-      [name]: prev[name] === "X" ? "" : "X",
+      [id]: !prev[id]
     }));
   };
+
+  const toggleCalibrationMode = () => {
+    setIsCalibrationMode(prev => !prev);
+  };
+
   return (
     <div className="minerva-form-container">
-      <div id="page-container">
+      <div style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        zIndex: 9999,
+        background: 'white',
+        padding: '10px',
+        border: isCalibrationMode ? '2px solid red' : '1px solid #ccc',
+        borderRadius: '8px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '5px'
+      }}>
+        <button onClick={toggleCalibrationMode} style={{ padding: '5px 10px', cursor: 'pointer' }}>
+          {isCalibrationMode ? '🛑 Desactivar Calibración' : '🛠️ Calibrar'}
+        </button>
+
+        {isCalibrationMode && (
+          <>
+            <h3 style={{ margin: '5px 0', color: 'red', fontSize: '14px' }}>Modo Calibración</h3>
+            <p style={{ margin: '5px 0' }}>Puntos: <strong>{calibrationPoints.length}</strong></p>
+            <button
+              onClick={exportCalibrationData}
+              style={{
+                background: 'red',
+                color: 'white',
+                border: 'none',
+                padding: '8px 16px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontWeight: 'bold'
+              }}
+            >
+              EXPORTAR DATOS
+            </button>
+          </>
+        )}
+      </div>
+
+      <div
+        id="page-container"
+        onClick={handleCalibrationClick}
+        className={isCalibrationMode ? "is-calibrating" : ""}
+        style={{ cursor: 'crosshair' }}
+      >
         <div id="pf1" className="pf w0 h0" data-page-no="1">
           <div className="pc pc1 w0 h0">
+            {/* Page 1 Overlays */}
+            {PAGE_1_COORDINATES.map((point) => (
+              <OverlayCheckbox
+                key={point.id}
+                id={point.id}
+                left={point.left}
+                top={point.top}
+                checked={!!overlayState[point.id]}
+                onChange={handleOverlayChange}
+              />
+            ))}
             <img
               className="bi x0 y0 w0 h0"
               alt=""
@@ -787,10 +907,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_cedula_ciudadania}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_cedula_ciudadania")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -804,10 +920,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_cedula_extranjeria}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_cedula_extranjeria")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -821,10 +933,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_segunda_clase}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_segunda_clase")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -838,10 +946,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_primera_clase}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_primera_clase")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -907,10 +1011,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_recomienda}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_recomienda")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -924,10 +1024,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_trabajando}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_trabajando")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -941,10 +1037,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_no_trabajando}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_no_trabajando")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -958,10 +1050,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_no_recomienda}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_no_recomienda")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -975,10 +1063,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_parientes}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_parientes")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -992,10 +1076,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_no_parientes}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_no_parientes")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1009,10 +1089,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_vehiculo}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_vehiculo")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1026,10 +1102,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_no_vehiculo}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_no_vehiculo")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1056,10 +1128,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_propia}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_propia")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1073,10 +1141,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_alquilada_p1}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_alquilada_p1")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1090,10 +1154,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_anuncio}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_anuncio")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1107,10 +1167,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_independiente}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_independiente")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1124,10 +1180,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_empleado}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_empleado")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1141,10 +1193,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_trabajo_antes}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_trabajo_antes")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1158,10 +1206,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_no_trabajo_antes}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_no_trabajo_antes")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1175,10 +1219,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_solicito_antes}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_solicito_antes")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1192,10 +1232,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_agencia}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_agencia")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1209,10 +1245,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_amigo}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_amigo")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1226,10 +1258,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_otro}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_otro")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -1306,6 +1334,17 @@ const MinervaForm = () => {
         </div>
         <div id="pf2" className="pf w0 h0" data-page-no="2">
           <div className="pc pc2 w0 h0">
+            {/* Page 2 Overlays */}
+            {PAGE_2_COORDINATES.map((point) => (
+              <OverlayCheckbox
+                key={point.id}
+                id={point.id}
+                left={point.left}
+                top={point.top}
+                checked={!!overlayState[point.id]}
+                onChange={handleOverlayChange}
+              />
+            ))}
             <img
               className="bi x0 y0 w0 h0"
               alt=""
@@ -2383,10 +2422,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_tecnico}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_tecnico")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -2465,10 +2500,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_tecnologo}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_tecnologo")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -2495,10 +2526,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_profesional}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_profesional")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -2642,10 +2669,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_sistemas}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_sistemas")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -2685,10 +2708,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_no_sistemas}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_no_sistemas")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -2728,10 +2747,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_idiomas}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_idiomas")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -2912,6 +2927,17 @@ const MinervaForm = () => {
         </div>
         <div id="pf3" className="pf w0 h0" data-page-no="3">
           <div className="pc pc3 w0 h0">
+            {/* Page 3 Overlays */}
+            {PAGE_3_COORDINATES.map((point) => (
+              <OverlayCheckbox
+                key={point.id}
+                id={point.id}
+                left={point.left}
+                top={point.top}
+                checked={!!overlayState[point.id]}
+                onChange={handleOverlayChange}
+              />
+            ))}
             <img
               className="bi x0 y0 w0 h0"
               alt=""
@@ -3540,10 +3566,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_no_distinciones}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_no_distinciones")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -3557,10 +3579,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_distinciones}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_distinciones")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -3770,10 +3788,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_no_deporte}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_no_deporte")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -3787,10 +3801,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_deporte}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_deporte")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -3934,10 +3944,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_eps_si}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_eps_si")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -3951,10 +3957,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_eps_no}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_eps_no")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -3968,10 +3970,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_pension_si}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_pension_si")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -3985,10 +3983,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_pension_no}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_pension_no")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -4106,10 +4100,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_no_ingreso}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_no_ingreso")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -4123,10 +4113,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_si_ingreso}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_si_ingreso")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -4203,6 +4189,37 @@ const MinervaForm = () => {
         </div>
         <div id="pf4" className="pf w0 h0" data-page-no="4">
           <div className="pc pc4 w0 h0">
+            {/* Page 4 Overlays */}
+            {PAGE_4_COORDINATES.map((point) => (
+              <OverlayCheckbox
+                key={point.id}
+                id={point.id}
+                left={point.left}
+                top={point.top}
+                checked={!!overlayState[point.id]}
+                onChange={handleOverlayChange}
+              />
+            ))}
+            {/* ID Input below signature */}
+            <input
+              type="text"
+              name="cedula_firma"
+              value={formData.cedula_firma}
+              onChange={handleInputChange}
+              className="absolute-input"
+              style={{
+                left: "63.697%",
+                top: "40.139%",
+                width: "22.985%",
+                height: "1.095%",
+                fontSize: "8px",
+                border: "none",
+                background: "transparent",
+                outline: "none",
+                pointerEvents: "auto",
+              }}
+              placeholder="C.C. No."
+            />
             <img
               className="bi x0 y0 w0 h0"
               alt=""
@@ -4361,6 +4378,15 @@ const MinervaForm = () => {
                 </span>
               </span>
             </div>
+            <ImageUpload
+              style={{
+                left: "64%",
+                top: "34.8%",
+                width: "23%",
+                height: "5.2%",
+                borderBottom: "1px solid #000"
+              }}
+            />
             <div className="t m7c x1d h55 y19c ff1 fs38 fc0 sc0 ls0 ws0">
               NOMBRE DEL ENTREVIST<span className="_ _0"></span>ADOR
             </div>
@@ -5058,10 +5084,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.field_238}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("field_238")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -5075,10 +5097,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_seleccionado_si}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_seleccionado_si")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -5092,10 +5110,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_seleccionado_no}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_seleccionado_no")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -5109,10 +5123,6 @@ const MinervaForm = () => {
                   placeholder=""
                   value={formData.chk_elegible_si}
                   onChange={handleInputChange}
-
-                  onClick={() => handleToggleX("chk_elegible_si")}
-                  readOnly
-                  style={{ cursor: "pointer" }}
                 />
               </div>
             </div>

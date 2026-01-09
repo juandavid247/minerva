@@ -47,6 +47,11 @@
   pointer-events: none !important;
 }
 
+.is-calibrating .pf,
+.is-calibrating .pc {
+  pointer-events: auto !important;
+}
+
 /* Re-enable interaction for inputs and pads */
 .minerva-input,
 .photo-upload-container,
