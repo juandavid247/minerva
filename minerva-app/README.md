@@ -1,79 +1,79 @@
-# Minerva Form Application
+# Aplicación de Formulario Minerva
 
-This is a React-based web application for filling out the "Minerva 10-03" resume form. It provides an interactive interface with precise overlays for text inputs, checkboxes, and signature uploads, matching the layout of the standard physical form.
+Esta es una aplicación web basada en React para diligenciar el formato de hoja de vida "Minerva 10-03". Proporciona una interfaz interactiva con superposiciones precisas para campos de texto, casillas de verificación y carga de firmas, coincidiendo exactamente con el diseño del formato físico estándar.
 
-## Features
+## Características
 
-- **Digital Form Filling**: Accurately maps input fields to the background image of the Minerva 10-03 form.
-- **Overlay Checkboxes**: Custom checkbox components that align perfectly with the form's grid.
-- **Signature Support**: allowing users to draw or upload their signature with resize and drag capabilities (`react-rnd`).
-- **Data Persistence**: Form state is managed in React state (implementation detail).
-- **Responsive Design**: utilizing a container-based layout to maintain aspect ratio and alignment.
+- **Diligenciamiento Digital**: Mapea con precisión los campos de entrada sobre la imagen de fondo del formato Minerva 10-03.
+- **Casillas de Verificación Superpuestas**: Componentes de checkbox personalizados que se alinean perfectamente con la cuadrícula del formulario.
+- **Soporte para Firmas**: Permite a los usuarios dibujar o cargar su firma con capacidades de redimensionamiento y arrastre (usando `react-rnd`).
+- **Persistencia de Datos**: El estado del formulario se gestiona internamente en React.
+- **Diseño Responsivo**: Utiliza un diseño basado en contenedores para mantener la relación de aspecto y la alineación correcta.
 
-## Tech Stack
+## Tecnologías
 
 - **Framework**: [React](https://react.dev/)
-- **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: CSS Modules / Standard CSS
-- **Libraries**:
-  - `react-rnd`: For draggable/resizable signature components.
-  - `react-signature-canvas`: For drawing signatures.
-  - `react-dropzone`: For file uploads.
+- **Herramienta de Construcción**: [Vite](https://vitejs.dev/)
+- **Estilos**: CSS Modules / CSS Estándar
+- **Librerías**:
+  - `react-rnd`: Para componentes de firma arrastrables y redimensionables.
+  - `react-signature-canvas`: Para dibujar firmas.
+  - `react-dropzone`: Para la carga de archivos.
 
-## Prerequisites
+## Requisitos Previos
 
-Before you begin, ensure you have met the following requirements:
+Antes de comenzar, asegúrese de cumplir con los siguientes requisitos:
 
-- **Node.js**: version 18.x or higher recommended.
-- **npm**: usually comes with Node.js.
+- **Node.js**: versión 18.x o superior recomendada.
+- **npm**: generalmente se instala junto con Node.js.
 
-## Installation
+## Instalación
 
-1.  **Clone the repository**:
+1.  **Clonar el repositorio**:
     ```bash
     git clone https://github.com/juandavid247/minerva.git
     cd minerva/minerva-app
     ```
 
-2.  **Install dependencies**:
+2.  **Instalar dependencias**:
     ```bash
     npm install
-    # or if you use yarn
+    # o si usa yarn
     yarn install
     ```
 
-## Usage
+## Uso
 
-1.  **Start the development server**:
+1.  **Iniciar el servidor de desarrollo**:
     ```bash
     npm run dev
     ```
 
-2.  **Open the app**:
-    Open your browser and navigate to `http://localhost:5173` (or the port shown in your terminal).
+2.  **Abrir la aplicación**:
+    Abra su navegador y navegue a `http://localhost:5173` (o el puerto que se muestre en su terminal).
 
-3.  **Build for production**:
+3.  **Construir para producción**:
     ```bash
     npm run build
     ```
-    The build artifacts will be stored in the `dist/` directory.
+    Los archivos compilados se guardarán en el directorio `dist/`.
 
-## Project Structure
+## Estructura del Proyecto
 
-- `src/components/`: Contains React components like `MinervaForm`, `ImageUpload`, and `OverlayCheckbox`.
-- `src/data/`: Contains coordinate mapping files (e.g., `formCoordinates.js`) for precise input alignment.
-- `public/`: Static assets (background images, icons).
+- `src/components/`: Contiene componentes de React como `MinervaForm`, `ImageUpload` y `OverlayCheckbox`.
+- `src/data/`: Contiene archivos de mapeo de coordenadas (ej. `formCoordinates.js`) para la alineación precisa de los inputs.
+- `public/`: Activos estáticos (imágenes de fondo, iconos).
 
-## Contributing
+## Contribución
 
-Contributions are always welcome!
+¡Las contribuciones son siempre bienvenidas!
 
-1.  Fork the project.
-2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4.  Push to the branch (`git push origin feature/AmazingFeature`).
-5.  Open a Pull Request.
+1.  Haga un Fork del proyecto.
+2.  Cree su rama de funcionalidad (`git checkout -b feature/NuevaFuncionalidad`).
+3.  Haga Commit de sus cambios (`git commit -m 'Agregar alguna NuevaFuncionalidad'`).
+4.  Haga Push a la rama (`git push origin feature/NuevaFuncionalidad`).
+5.  Abra un Pull Request.
 
-## License
+## Licencia
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distribuido bajo la Licencia MIT. Consulte `LICENSE` para más información.
