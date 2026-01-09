@@ -2,6 +2,7 @@
   {
     "page": 1,
     "cls": "c x3e y4e w2 h10",
+    "inner_cls": "t m1 x3f h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_0",
     "name": "fecha_p1_d"
@@ -9,6 +10,7 @@
   {
     "page": 1,
     "cls": "c x40 y4e w3 h10",
+    "inner_cls": "t m1 x3f h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_1",
     "name": "fecha_p1_m"
@@ -16,6 +18,7 @@
   {
     "page": 1,
     "cls": "c x33 y4e w4 h10",
+    "inner_cls": "t m1 x41 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_2",
     "name": "fecha_p1_a"
@@ -23,6 +26,7 @@
   {
     "page": 1,
     "cls": "c x4 y4e w5 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_3",
     "name": "empleo_solicitado"
@@ -30,6 +34,7 @@
   {
     "page": 1,
     "cls": "c x43 y4e w6 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_4",
     "name": "codigo_cargo"
@@ -37,6 +42,7 @@
   {
     "page": 1,
     "cls": "c x3 y50 w7 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_5",
     "name": "apellido_aspirante"
@@ -44,6 +50,7 @@
   {
     "page": 1,
     "cls": "c xc y50 w8 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_6",
     "name": "nombre_aspirante"
@@ -51,6 +58,7 @@
   {
     "page": 1,
     "cls": "c x3 y51 w9 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_7",
     "name": "direccion_domicilio"
@@ -58,6 +66,7 @@
   {
     "page": 1,
     "cls": "c xf y52 wa h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_8",
     "name": "ciudad_aspirante"
@@ -65,6 +74,7 @@
   {
     "page": 1,
     "cls": "c x3 y53 wb h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_9",
     "name": "telefono_aspirante"
@@ -72,6 +82,7 @@
   {
     "page": 1,
     "cls": "c xc y54 wc h12",
+    "inner_cls": "t m1 x42 h13 y55 ff8 fsf fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_10",
     "name": "celular_aspirante"
@@ -79,6 +90,7 @@
   {
     "page": 1,
     "cls": "c x3 y56 wd h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_11",
     "name": "email_aspirante"
@@ -86,6 +98,7 @@
   {
     "page": 1,
     "cls": "c xe y57 we h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_12",
     "name": "profesion_aspirante"
@@ -93,6 +106,7 @@
   {
     "page": 1,
     "cls": "c x3 y58 wf h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_13",
     "name": "nacionalidad_aspirante"
@@ -100,6 +114,7 @@
   {
     "page": 1,
     "cls": "c x44 y58 w10 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_14",
     "name": "estado_civil_aspirante"
@@ -107,6 +122,7 @@
   {
     "page": 1,
     "cls": "c x45 y58 w11 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_15",
     "name": "tiempo_experiencia_laboral"
@@ -114,6 +130,7 @@
   {
     "page": 1,
     "cls": "c x46 y59 w12 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_16",
     "name": "chk_cedula_ciudadania"
@@ -121,6 +138,7 @@
   {
     "page": 1,
     "cls": "c x47 y5a w13 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_17",
     "name": "chk_cedula_extranjeria"
@@ -128,6 +146,7 @@
   {
     "page": 1,
     "cls": "c x48 y5a w14 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_18",
     "name": "chk_segunda_clase"
@@ -135,6 +154,7 @@
   {
     "page": 1,
     "cls": "c x48 y59 w14 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_19",
     "name": "chk_primera_clase"
@@ -142,6 +162,7 @@
   {
     "page": 1,
     "cls": "c x3 y5b w15 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_20",
     "name": "cedula_numero"
@@ -149,6 +170,7 @@
   {
     "page": 1,
     "cls": "c x49 y5b w16 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_21",
     "name": "cedula_extranjeria_numero"
@@ -156,6 +178,7 @@
   {
     "page": 1,
     "cls": "c x4a y5b w17 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_22",
     "name": "cedula_expedida_en"
@@ -163,6 +186,7 @@
   {
     "page": 1,
     "cls": "c x4b y5c w18 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_23",
     "name": "libreta_militar_numero"
@@ -170,6 +194,7 @@
   {
     "page": 1,
     "cls": "c x4c y5c w19 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_24",
     "name": "chk_si_recomienda"
@@ -177,6 +202,7 @@
   {
     "page": 1,
     "cls": "c x4d y5d w1a h10",
+    "inner_cls": "t m1 x3f h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_25",
     "name": "chk_si_trabajando"
@@ -184,6 +210,7 @@
   {
     "page": 1,
     "cls": "c x4e y5d w1b h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_26",
     "name": "chk_no_trabajando"
@@ -191,6 +218,7 @@
   {
     "page": 1,
     "cls": "c x4f y5d w1c h10",
+    "inner_cls": "t m1 x50 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_27",
     "name": "chk_no_recomienda"
@@ -198,6 +226,7 @@
   {
     "page": 1,
     "cls": "c x51 y5e w1d h14",
+    "inner_cls": "t m1 x42 h15 y5f ff8 fs10 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_28",
     "name": "chk_si_parientes"
@@ -205,6 +234,7 @@
   {
     "page": 1,
     "cls": "c x52 y5d w1e h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_29",
     "name": "chk_no_parientes"
@@ -212,6 +242,7 @@
   {
     "page": 1,
     "cls": "c x46 y60 w1f h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_30",
     "name": "chk_si_vehiculo"
@@ -219,6 +250,7 @@
   {
     "page": 1,
     "cls": "c x53 y61 w20 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_31",
     "name": "chk_no_vehiculo"
@@ -226,6 +258,7 @@
   {
     "page": 1,
     "cls": "c x16 y62 w21 h16",
+    "inner_cls": "t m1 x42 h17 y63 ff8 fs11 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_32",
     "name": "tarjeta_profesional_numero"
@@ -233,6 +266,7 @@
   {
     "page": 1,
     "cls": "c x54 y64 w22 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_33",
     "name": "chk_propia"
@@ -240,6 +274,7 @@
   {
     "page": 1,
     "cls": "c x2b y64 w23 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_34",
     "name": "chk_alquilada_p1"
@@ -247,6 +282,7 @@
   {
     "page": 1,
     "cls": "c x55 y65 w24 h18",
+    "inner_cls": "t m1 x42 h19 y66 ff8 fs12 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_35",
     "name": "chk_anuncio"
@@ -254,6 +290,7 @@
   {
     "page": 1,
     "cls": "c x56 y65 w25 h18",
+    "inner_cls": "t m1 x42 h19 y66 ff8 fs12 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_36",
     "name": "chk_independiente"
@@ -261,6 +298,7 @@
   {
     "page": 1,
     "cls": "c x32 y65 w26 h18",
+    "inner_cls": "t m1 x42 h19 y66 ff8 fs12 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_37",
     "name": "chk_empleado"
@@ -268,6 +306,7 @@
   {
     "page": 1,
     "cls": "c x32 y67 w27 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_38",
     "name": "chk_si_trabajo_antes"
@@ -275,6 +314,7 @@
   {
     "page": 1,
     "cls": "c x57 y67 w28 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_39",
     "name": "chk_no_trabajo_antes"
@@ -282,6 +322,7 @@
   {
     "page": 1,
     "cls": "c x45 y68 w28 h10",
+    "inner_cls": "t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_40",
     "name": "chk_si_solicito_antes"
@@ -289,6 +330,7 @@
   {
     "page": 1,
     "cls": "c x54 y69 w29 h18",
+    "inner_cls": "t m1 x42 h19 y66 ff8 fs12 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_41",
     "name": "chk_agencia"
@@ -296,6 +338,7 @@
   {
     "page": 1,
     "cls": "c x54 y6a w2a h14",
+    "inner_cls": "t m1 x42 h1a y6b ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_42",
     "name": "chk_amigo"
@@ -303,6 +346,7 @@
   {
     "page": 1,
     "cls": "c x58 y6c w2b h1b",
+    "inner_cls": "t m1 x0 h1c y6d ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_43",
     "name": "chk_otro"
@@ -310,6 +354,7 @@
   {
     "page": 1,
     "cls": "c x59 y6e w2c h1d",
+    "inner_cls": "t m1 x42 h1e y6f ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_44",
     "name": "ciudad_mayor_parte_vida"
@@ -317,6 +362,7 @@
   {
     "page": 1,
     "cls": "c x59 y70 w2c h1f",
+    "inner_cls": "t m1 x42 h11 y71 ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_45",
     "name": "regiones_trabajado"
@@ -324,6 +370,7 @@
   {
     "page": 1,
     "cls": "c x5a y72 w2d h20",
+    "inner_cls": "t m1 x42 h21 y71 ff8 fs16 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_46",
     "name": "tiempo_residencia"
@@ -331,6 +378,7 @@
   {
     "page": 1,
     "cls": "c x5a y73 w2d h22",
+    "inner_cls": "t m1 x42 h1e y6b ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_47",
     "name": "obligaciones_economicas_mensuales"
@@ -338,6 +386,7 @@
   {
     "page": 1,
     "cls": "c x5a y74 w2d h14",
+    "inner_cls": "t m1 x42 h1e y6b ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_48",
     "name": "aspiracion_salarial"
@@ -345,6 +394,7 @@
   {
     "page": 2,
     "cls": "c x91 ye5 w2e h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_49",
     "name": "field_49"
@@ -352,6 +402,7 @@
   {
     "page": 2,
     "cls": "c x92 ye5 w2f h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_50",
     "name": "field_50"
@@ -359,6 +410,7 @@
   {
     "page": 2,
     "cls": "c x93 ye5 w30 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_51",
     "name": "field_51"
@@ -366,6 +418,7 @@
   {
     "page": 2,
     "cls": "c x91 ye7 w31 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_52",
     "name": "field_52"
@@ -373,6 +426,7 @@
   {
     "page": 2,
     "cls": "c x5d ye7 w32 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_53",
     "name": "field_53"
@@ -380,6 +434,7 @@
   {
     "page": 2,
     "cls": "c x94 ye7 w33 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_54",
     "name": "field_54"
@@ -387,6 +442,7 @@
   {
     "page": 2,
     "cls": "c x95 ye7 w34 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_55",
     "name": "field_55"
@@ -394,6 +450,7 @@
   {
     "page": 2,
     "cls": "c x63 ye9 w35 h32",
+    "inner_cls": "t m1 x96 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_56",
     "name": "field_56"
@@ -401,6 +458,7 @@
   {
     "page": 2,
     "cls": "c x59 yea w36 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_57",
     "name": "field_57"
@@ -408,6 +466,7 @@
   {
     "page": 2,
     "cls": "c x97 yeb w37 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_58",
     "name": "field_58"
@@ -415,6 +474,7 @@
   {
     "page": 2,
     "cls": "c x91 yec w38 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_59",
     "name": "field_59"
@@ -422,6 +482,7 @@
   {
     "page": 2,
     "cls": "c x92 yec w39 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_60",
     "name": "field_60"
@@ -429,6 +490,7 @@
   {
     "page": 2,
     "cls": "c x5e yed w3a h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_61",
     "name": "field_61"
@@ -436,6 +498,7 @@
   {
     "page": 2,
     "cls": "c x5e yee w3a h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_62",
     "name": "field_62"
@@ -443,6 +506,7 @@
   {
     "page": 2,
     "cls": "c x5e yef w3a h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_63",
     "name": "field_63"
@@ -450,6 +514,7 @@
   {
     "page": 2,
     "cls": "c x5e yf0 w3a h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_64",
     "name": "field_64"
@@ -457,6 +522,7 @@
   {
     "page": 2,
     "cls": "c x91 yf1 w3b h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_65",
     "name": "field_65"
@@ -464,6 +530,7 @@
   {
     "page": 2,
     "cls": "c x92 yee w3c h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_66",
     "name": "field_66"
@@ -471,6 +538,7 @@
   {
     "page": 2,
     "cls": "c x91 yef w3b h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_67",
     "name": "field_67"
@@ -478,6 +546,7 @@
   {
     "page": 2,
     "cls": "c x92 yf0 w3d h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_68",
     "name": "field_68"
@@ -485,6 +554,7 @@
   {
     "page": 2,
     "cls": "c x92 yef w3d h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_69",
     "name": "field_69"
@@ -492,6 +562,7 @@
   {
     "page": 2,
     "cls": "c x91 yf0 w3b h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_70",
     "name": "field_70"
@@ -499,6 +570,7 @@
   {
     "page": 2,
     "cls": "c x98 yf2 w3e h34",
+    "inner_cls": "t m1 x50 h35 yf3 ff8 fs25 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_71",
     "name": "field_71"
@@ -506,6 +578,7 @@
   {
     "page": 2,
     "cls": "c x32 yf2 w1a h34",
+    "inner_cls": "t m1 x3f h35 yf3 ff8 fs25 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_72",
     "name": "field_72"
@@ -513,6 +586,7 @@
   {
     "page": 2,
     "cls": "c x74 yf2 w3f h34",
+    "inner_cls": "t m1 x42 h35 yf3 ff8 fs25 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_73",
     "name": "field_73"
@@ -520,6 +594,7 @@
   {
     "page": 2,
     "cls": "c x99 yf2 w40 h34",
+    "inner_cls": "t m1 x42 h35 yf3 ff8 fs25 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_74",
     "name": "field_74"
@@ -527,6 +602,7 @@
   {
     "page": 2,
     "cls": "c x9a yf4 w41 h36",
+    "inner_cls": "t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_75",
     "name": "field_75"
@@ -534,6 +610,7 @@
   {
     "page": 2,
     "cls": "c x98 yf6 w3e h32",
+    "inner_cls": "t m1 x50 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_76",
     "name": "field_76"
@@ -541,6 +618,7 @@
   {
     "page": 2,
     "cls": "c x32 yf6 w1a h32",
+    "inner_cls": "t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_77",
     "name": "field_77"
@@ -548,6 +626,7 @@
   {
     "page": 2,
     "cls": "c x74 yf6 w3f h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_78",
     "name": "field_78"
@@ -555,6 +634,7 @@
   {
     "page": 2,
     "cls": "c x99 yf6 w40 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_79",
     "name": "field_79"
@@ -562,6 +642,7 @@
   {
     "page": 2,
     "cls": "c x9a yf7 w41 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_80",
     "name": "field_80"
@@ -569,6 +650,7 @@
   {
     "page": 2,
     "cls": "c x98 yf8 w3e h31",
+    "inner_cls": "t m1 x50 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_81",
     "name": "field_81"
@@ -576,6 +658,7 @@
   {
     "page": 2,
     "cls": "c x9a yf9 w41 h38",
+    "inner_cls": "t m1 x42 h39 yfa ff8 fs27 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_82",
     "name": "field_82"
@@ -583,6 +666,7 @@
   {
     "page": 2,
     "cls": "c x98 yfb w3e h32",
+    "inner_cls": "t m1 x50 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_83",
     "name": "field_83"
@@ -590,6 +674,7 @@
   {
     "page": 2,
     "cls": "c x9a yfc w41 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_84",
     "name": "field_84"
@@ -597,6 +682,7 @@
   {
     "page": 2,
     "cls": "c x98 yfd w3e h36",
+    "inner_cls": "t m1 x50 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_85",
     "name": "field_85"
@@ -604,6 +690,7 @@
   {
     "page": 2,
     "cls": "c x32 yfd w1a h36",
+    "inner_cls": "t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_86",
     "name": "field_86"
@@ -611,6 +698,7 @@
   {
     "page": 2,
     "cls": "c x74 yfd w3f h36",
+    "inner_cls": "t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_87",
     "name": "field_87"
@@ -618,6 +706,7 @@
   {
     "page": 2,
     "cls": "c x99 yfd w40 h36",
+    "inner_cls": "t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_88",
     "name": "field_88"
@@ -625,6 +714,7 @@
   {
     "page": 2,
     "cls": "c x9a yfe w41 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_89",
     "name": "field_89"
@@ -632,6 +722,7 @@
   {
     "page": 2,
     "cls": "c x99 yff w40 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_90",
     "name": "field_90"
@@ -639,6 +730,7 @@
   {
     "page": 2,
     "cls": "c x74 yff w3f h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_91",
     "name": "field_91"
@@ -646,6 +738,7 @@
   {
     "page": 2,
     "cls": "c x32 yff w1a h32",
+    "inner_cls": "t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_92",
     "name": "field_92"
@@ -653,6 +746,7 @@
   {
     "page": 2,
     "cls": "c x98 yff w3e h32",
+    "inner_cls": "t m1 x50 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_93",
     "name": "field_93"
@@ -660,6 +754,7 @@
   {
     "page": 2,
     "cls": "c x32 yfb w1a h32",
+    "inner_cls": "t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_94",
     "name": "chk_tecnico"
@@ -667,6 +762,7 @@
   {
     "page": 2,
     "cls": "c x74 yfb w3f h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_95",
     "name": "field_95"
@@ -674,6 +770,7 @@
   {
     "page": 2,
     "cls": "c x99 yfb w40 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_96",
     "name": "field_96"
@@ -681,6 +778,7 @@
   {
     "page": 2,
     "cls": "c x9a y100 w41 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_97",
     "name": "field_97"
@@ -688,6 +786,7 @@
   {
     "page": 2,
     "cls": "c x99 y101 w40 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_98",
     "name": "field_98"
@@ -695,6 +794,7 @@
   {
     "page": 2,
     "cls": "c x74 y101 w3f h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_99",
     "name": "field_99"
@@ -702,6 +802,7 @@
   {
     "page": 2,
     "cls": "c x32 y101 w1a h31",
+    "inner_cls": "t m1 x3f h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_100",
     "name": "chk_tecnologo"
@@ -709,6 +810,7 @@
   {
     "page": 2,
     "cls": "c x98 y101 w3e h31",
+    "inner_cls": "t m1 x50 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_101",
     "name": "field_101"
@@ -716,6 +818,7 @@
   {
     "page": 2,
     "cls": "c x32 yf8 w1a h31",
+    "inner_cls": "t m1 x3f h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_102",
     "name": "chk_profesional"
@@ -723,6 +826,7 @@
   {
     "page": 2,
     "cls": "c x74 yf8 w3f h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_103",
     "name": "field_103"
@@ -730,6 +834,7 @@
   {
     "page": 2,
     "cls": "c x99 yf8 w40 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_104",
     "name": "field_104"
@@ -737,6 +842,7 @@
   {
     "page": 2,
     "cls": "c x9a y102 w41 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_105",
     "name": "field_105"
@@ -744,6 +850,7 @@
   {
     "page": 2,
     "cls": "c x98 y103 w42 h32",
+    "inner_cls": "t m1 x9b h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_106",
     "name": "field_106"
@@ -751,6 +858,7 @@
   {
     "page": 2,
     "cls": "c x9c y103 w43 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_107",
     "name": "field_107"
@@ -758,6 +866,7 @@
   {
     "page": 2,
     "cls": "c x70 y103 w44 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_108",
     "name": "field_108"
@@ -765,6 +874,7 @@
   {
     "page": 2,
     "cls": "c x63 y104 w45 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_109",
     "name": "field_109"
@@ -772,6 +882,7 @@
   {
     "page": 2,
     "cls": "c x6f y104 w46 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_110",
     "name": "field_110"
@@ -779,6 +890,7 @@
   {
     "page": 2,
     "cls": "c x95 y104 w34 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_111",
     "name": "field_111"
@@ -786,6 +898,7 @@
   {
     "page": 2,
     "cls": "c x91 y105 w47 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_112",
     "name": "field_112"
@@ -793,6 +906,7 @@
   {
     "page": 2,
     "cls": "c x20 y106 w48 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_113",
     "name": "chk_si_sistemas"
@@ -800,6 +914,7 @@
   {
     "page": 2,
     "cls": "c x20 y107 w48 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_114",
     "name": "field_114"
@@ -807,6 +922,7 @@
   {
     "page": 2,
     "cls": "c x9d y107 w49 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_115",
     "name": "field_115"
@@ -814,6 +930,7 @@
   {
     "page": 2,
     "cls": "c x9d y106 w49 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_116",
     "name": "chk_no_sistemas"
@@ -821,6 +938,7 @@
   {
     "page": 2,
     "cls": "c x20 y108 w4a h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_117",
     "name": "field_117"
@@ -828,6 +946,7 @@
   {
     "page": 2,
     "cls": "c x9e y109 w4b h3a",
+    "inner_cls": "t m1 x42 h13 y10a ff8 fsf fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_118",
     "name": "field_118"
@@ -835,6 +954,7 @@
   {
     "page": 2,
     "cls": "c x8a y10b w4c h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_119",
     "name": "chk_si_idiomas"
@@ -842,6 +962,7 @@
   {
     "page": 2,
     "cls": "c x8a y10d w4c h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_120",
     "name": "field_120"
@@ -849,6 +970,7 @@
   {
     "page": 2,
     "cls": "c xc y10e w4d h3b",
+    "inner_cls": "t m1 x42 h1e ye6 ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_121",
     "name": "field_121"
@@ -856,6 +978,7 @@
   {
     "page": 2,
     "cls": "c xc y10f w4e h3c",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_122",
     "name": "field_122"
@@ -863,6 +986,7 @@
   {
     "page": 2,
     "cls": "c x9f y110 w4f h3d",
+    "inner_cls": "t m1 x42 h1e y10a ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_123",
     "name": "field_123"
@@ -870,6 +994,7 @@
   {
     "page": 2,
     "cls": "c x9f y111 w4f h3d",
+    "inner_cls": "t m1 x42 h1e y10a ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_124",
     "name": "field_124"
@@ -877,6 +1002,7 @@
   {
     "page": 2,
     "cls": "c x9f y112 w4f h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_125",
     "name": "field_125"
@@ -884,6 +1010,7 @@
   {
     "page": 2,
     "cls": "c x9f y113 w4f h3e",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_126",
     "name": "field_126"
@@ -891,6 +1018,7 @@
   {
     "page": 2,
     "cls": "c x9f y114 w4f h3e",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_127",
     "name": "field_127"
@@ -898,6 +1026,7 @@
   {
     "page": 2,
     "cls": "c x9f y115 w4f h3e",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_128",
     "name": "field_128"
@@ -905,6 +1034,7 @@
   {
     "page": 2,
     "cls": "c x9f y116 w4f h3f",
+    "inner_cls": "t m1 x42 h11 ye6 ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_129",
     "name": "field_129"
@@ -912,6 +1042,7 @@
   {
     "page": 2,
     "cls": "c x9f y117 w4f h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_130",
     "name": "field_130"
@@ -919,6 +1050,7 @@
   {
     "page": 2,
     "cls": "c x9f y118 w4f h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_131",
     "name": "field_131"
@@ -926,6 +1058,7 @@
   {
     "page": 2,
     "cls": "c x9f y119 w4f h3c",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_132",
     "name": "field_132"
@@ -933,6 +1066,7 @@
   {
     "page": 3,
     "cls": "c x3 y156 w50 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_133",
     "name": "field_133"
@@ -940,6 +1074,7 @@
   {
     "page": 3,
     "cls": "c xb0 y156 w51 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_134",
     "name": "field_134"
@@ -947,6 +1082,7 @@
   {
     "page": 3,
     "cls": "c xb1 y156 w52 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_135",
     "name": "field_135"
@@ -954,6 +1090,7 @@
   {
     "page": 3,
     "cls": "c x3 y157 w53 h46",
+    "inner_cls": "t m1 x42 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_136",
     "name": "field_136"
@@ -961,6 +1098,7 @@
   {
     "page": 3,
     "cls": "c xb2 y157 w54 h46",
+    "inner_cls": "t m1 x42 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_137",
     "name": "field_137"
@@ -968,6 +1106,7 @@
   {
     "page": 3,
     "cls": "c xb3 y157 w55 h46",
+    "inner_cls": "t m1 x3f h1a y158 ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_138",
     "name": "field_138"
@@ -975,6 +1114,7 @@
   {
     "page": 3,
     "cls": "c xb4 y157 w55 h46",
+    "inner_cls": "t m1 x3f h1a y158 ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_139",
     "name": "field_139"
@@ -982,6 +1122,7 @@
   {
     "page": 3,
     "cls": "c x80 y159 w56 h47",
+    "inner_cls": "t m1 x42 h13 y15a ff8 fsf fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_140",
     "name": "field_140"
@@ -989,6 +1130,7 @@
   {
     "page": 3,
     "cls": "c xb5 y157 w57 h46",
+    "inner_cls": "t m1 x3f h1a y158 ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_141",
     "name": "field_141"
@@ -996,6 +1138,7 @@
   {
     "page": 3,
     "cls": "c xb6 y157 w58 h46",
+    "inner_cls": "t m1 x3f h1a y158 ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_142",
     "name": "field_142"
@@ -1003,6 +1146,7 @@
   {
     "page": 3,
     "cls": "c xb7 y157 w59 h46",
+    "inner_cls": "t m1 xb8 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_143",
     "name": "field_143"
@@ -1010,6 +1154,7 @@
   {
     "page": 3,
     "cls": "c x3 y15b w5a h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_144",
     "name": "field_144"
@@ -1017,6 +1162,7 @@
   {
     "page": 3,
     "cls": "c x30 y15b w5b h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_145",
     "name": "field_145"
@@ -1024,6 +1170,7 @@
   {
     "page": 3,
     "cls": "c x10 y15b w5c h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_146",
     "name": "field_146"
@@ -1031,6 +1178,7 @@
   {
     "page": 3,
     "cls": "c xa0 y15b w5d h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_147",
     "name": "field_147"
@@ -1038,6 +1186,7 @@
   {
     "page": 3,
     "cls": "c x3 y15c w5e h46",
+    "inner_cls": "t m1 x42 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_148",
     "name": "field_148"
@@ -1045,6 +1194,7 @@
   {
     "page": 3,
     "cls": "c x3 y15d w5e h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_149",
     "name": "field_149"
@@ -1052,6 +1202,7 @@
   {
     "page": 3,
     "cls": "c x3 y15e w5e h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_150",
     "name": "field_150"
@@ -1059,6 +1210,7 @@
   {
     "page": 3,
     "cls": "c xa3 y159 w5f h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_151",
     "name": "field_151"
@@ -1066,6 +1218,7 @@
   {
     "page": 3,
     "cls": "c x3 y15f w5e h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_152",
     "name": "field_152"
@@ -1073,6 +1226,7 @@
   {
     "page": 3,
     "cls": "c xb9 y160 w60 h38",
+    "inner_cls": "t m1 x42 h39 yfa ff8 fs27 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_153",
     "name": "field_153"
@@ -1080,6 +1234,7 @@
   {
     "page": 3,
     "cls": "c x3 y161 w61 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_154",
     "name": "field_154"
@@ -1087,6 +1242,7 @@
   {
     "page": 3,
     "cls": "c xb9 y162 w62 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_155",
     "name": "field_155"
@@ -1094,6 +1250,7 @@
   {
     "page": 3,
     "cls": "c x3 y163 w63 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_156",
     "name": "field_156"
@@ -1101,6 +1258,7 @@
   {
     "page": 3,
     "cls": "c x80 y164 w56 h48",
+    "inner_cls": "t m1 x42 h17 y165 ff8 fs11 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_157",
     "name": "chk_no_distinciones"
@@ -1108,6 +1266,7 @@
   {
     "page": 3,
     "cls": "c xa3 y164 w64 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_158",
     "name": "chk_si_distinciones"
@@ -1115,6 +1274,7 @@
   {
     "page": 3,
     "cls": "c x3 y166 w63 h36",
+    "inner_cls": "t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_159",
     "name": "field_159"
@@ -1122,6 +1282,7 @@
   {
     "page": 3,
     "cls": "c x3 y167 w63 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_160",
     "name": "field_160"
@@ -1129,6 +1290,7 @@
   {
     "page": 3,
     "cls": "c x3 y168 w63 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_161",
     "name": "field_161"
@@ -1136,6 +1298,7 @@
   {
     "page": 3,
     "cls": "c xa0 y169 w5d h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_162",
     "name": "field_162"
@@ -1143,6 +1306,7 @@
   {
     "page": 3,
     "cls": "c xba y169 w65 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_163",
     "name": "field_163"
@@ -1150,6 +1314,7 @@
   {
     "page": 3,
     "cls": "c x32 y169 w66 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_164",
     "name": "field_164"
@@ -1157,6 +1322,7 @@
   {
     "page": 3,
     "cls": "c x3 y169 w67 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_165",
     "name": "field_165"
@@ -1164,6 +1330,7 @@
   {
     "page": 3,
     "cls": "c xb7 y16a w68 h36",
+    "inner_cls": "t m1 xb8 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_166",
     "name": "field_166"
@@ -1171,6 +1338,7 @@
   {
     "page": 3,
     "cls": "c xb6 y16a w57 h36",
+    "inner_cls": "t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_167",
     "name": "field_167"
@@ -1178,6 +1346,7 @@
   {
     "page": 3,
     "cls": "c xb5 y16a w57 h36",
+    "inner_cls": "t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_168",
     "name": "field_168"
@@ -1185,6 +1354,7 @@
   {
     "page": 3,
     "cls": "c xb4 y16a w55 h36",
+    "inner_cls": "t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_169",
     "name": "field_169"
@@ -1192,6 +1362,7 @@
   {
     "page": 3,
     "cls": "c xb3 y16a w57 h36",
+    "inner_cls": "t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_170",
     "name": "field_170"
@@ -1199,6 +1370,7 @@
   {
     "page": 3,
     "cls": "c xbb y16a w69 h36",
+    "inner_cls": "t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_171",
     "name": "field_171"
@@ -1206,6 +1378,7 @@
   {
     "page": 3,
     "cls": "c x3 y16a w6a h36",
+    "inner_cls": "t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_172",
     "name": "field_172"
@@ -1213,6 +1386,7 @@
   {
     "page": 3,
     "cls": "c xb1 y161 w52 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_173",
     "name": "chk_no_deporte"
@@ -1220,6 +1394,7 @@
   {
     "page": 3,
     "cls": "c xb0 y161 w51 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_174",
     "name": "chk_si_deporte"
@@ -1227,6 +1402,7 @@
   {
     "page": 3,
     "cls": "c x5e y16a w6b h36",
+    "inner_cls": "t m1 xb8 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_175",
     "name": "field_175"
@@ -1234,6 +1410,7 @@
   {
     "page": 3,
     "cls": "c x5e y157 w6b h46",
+    "inner_cls": "t m1 xb8 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_176",
     "name": "field_176"
@@ -1241,6 +1418,7 @@
   {
     "page": 3,
     "cls": "c x3 y16b w6c h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_177",
     "name": "field_177"
@@ -1248,6 +1426,7 @@
   {
     "page": 3,
     "cls": "c xb9 y16c w6d h3e",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_178",
     "name": "field_178"
@@ -1255,6 +1434,7 @@
   {
     "page": 3,
     "cls": "c x3 y16d w6e h3e",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_179",
     "name": "field_179"
@@ -1262,6 +1442,7 @@
   {
     "page": 3,
     "cls": "c x80 y16e w6f h49",
+    "inner_cls": "t m1 x42 h1e y16f ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_180",
     "name": "field_180"
@@ -1269,6 +1450,7 @@
   {
     "page": 3,
     "cls": "c xa3 y16e w70 h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_181",
     "name": "field_181"
@@ -1276,6 +1458,7 @@
   {
     "page": 3,
     "cls": "c x3 y170 w6e h4a",
+    "inner_cls": "t m1 x42 h1e y171 ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_182",
     "name": "field_182"
@@ -1283,6 +1466,7 @@
   {
     "page": 3,
     "cls": "c x3 y172 w6e h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_183",
     "name": "field_183"
@@ -1290,6 +1474,7 @@
   {
     "page": 3,
     "cls": "c x3 y173 w6e h3a",
+    "inner_cls": "t m1 x42 h13 y10a ff8 fsf fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_184",
     "name": "field_184"
@@ -1297,6 +1482,7 @@
   {
     "page": 3,
     "cls": "c xa0 y174 w71 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_185",
     "name": "chk_eps_si"
@@ -1304,6 +1490,7 @@
   {
     "page": 3,
     "cls": "c xbc y174 w72 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_186",
     "name": "chk_eps_no"
@@ -1311,6 +1498,7 @@
   {
     "page": 3,
     "cls": "c x32 y174 w73 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_187",
     "name": "chk_pension_si"
@@ -1318,6 +1506,7 @@
   {
     "page": 3,
     "cls": "c x3 y174 w74 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_188",
     "name": "chk_pension_no"
@@ -1325,6 +1514,7 @@
   {
     "page": 3,
     "cls": "c xb7 y175 w59 h32",
+    "inner_cls": "t m1 xb8 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_189",
     "name": "field_189"
@@ -1332,6 +1522,7 @@
   {
     "page": 3,
     "cls": "c xb6 y175 w57 h32",
+    "inner_cls": "t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_190",
     "name": "field_190"
@@ -1339,6 +1530,7 @@
   {
     "page": 3,
     "cls": "c xb5 y175 w57 h32",
+    "inner_cls": "t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_191",
     "name": "field_191"
@@ -1346,6 +1538,7 @@
   {
     "page": 3,
     "cls": "c x5e y175 w75 h32",
+    "inner_cls": "t m1 xb8 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_192",
     "name": "field_192"
@@ -1353,6 +1546,7 @@
   {
     "page": 3,
     "cls": "c xb4 y175 w57 h32",
+    "inner_cls": "t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_193",
     "name": "field_193"
@@ -1360,6 +1554,7 @@
   {
     "page": 3,
     "cls": "c xb3 y175 w57 h32",
+    "inner_cls": "t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_194",
     "name": "field_194"
@@ -1367,6 +1562,7 @@
   {
     "page": 3,
     "cls": "c xbb y175 w69 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_195",
     "name": "field_195"
@@ -1374,6 +1570,7 @@
   {
     "page": 3,
     "cls": "c x3 y175 w76 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_196",
     "name": "field_196"
@@ -1381,6 +1578,7 @@
   {
     "page": 3,
     "cls": "c xb1 y16b w77 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_197",
     "name": "chk_no_ingreso"
@@ -1388,6 +1586,7 @@
   {
     "page": 3,
     "cls": "c xb0 y16b w78 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_198",
     "name": "chk_si_ingreso"
@@ -1395,6 +1594,7 @@
   {
     "page": 3,
     "cls": "c xbd y176 w79 h3e",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_199",
     "name": "field_199"
@@ -1402,6 +1602,7 @@
   {
     "page": 3,
     "cls": "c xbe y176 w7a h3e",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_247",
     "name": "field_247"
@@ -1409,6 +1610,7 @@
   {
     "page": 3,
     "cls": "c xbf y177 w7b h3c",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_200",
     "name": "field_200"
@@ -1416,6 +1618,7 @@
   {
     "page": 3,
     "cls": "c x4f y177 w7c h3c",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_201",
     "name": "field_201"
@@ -1423,6 +1626,7 @@
   {
     "page": 3,
     "cls": "c xc0 y177 w7d h3c",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_202",
     "name": "field_202"
@@ -1430,6 +1634,7 @@
   {
     "page": 3,
     "cls": "c xc1 y176 w7e h3e",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_203",
     "name": "field_203"
@@ -1437,6 +1642,7 @@
   {
     "page": 4,
     "cls": "c x6e y1c5 w7f h62",
+    "inner_cls": "t m1 x42 h63 y1c6 ff8 fs45 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_204",
     "name": "field_204"
@@ -1444,6 +1650,7 @@
   {
     "page": 4,
     "cls": "c x6e y1c7 w7f h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_205",
     "name": "field_205"
@@ -1451,6 +1658,7 @@
   {
     "page": 4,
     "cls": "c x6e y1c8 w7f h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_206",
     "name": "field_206"
@@ -1458,6 +1666,7 @@
   {
     "page": 4,
     "cls": "c x1a y1c7 w80 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_207",
     "name": "field_207"
@@ -1465,6 +1674,7 @@
   {
     "page": 4,
     "cls": "c x1a y1c5 w80 h62",
+    "inner_cls": "t m1 x42 h63 y1c6 ff8 fs45 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_208",
     "name": "field_208"
@@ -1472,6 +1682,7 @@
   {
     "page": 4,
     "cls": "c x1a y1c8 w80 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_209",
     "name": "field_209"
@@ -1479,6 +1690,7 @@
   {
     "page": 4,
     "cls": "c x14 y1c5 w81 h62",
+    "inner_cls": "t m1 x42 h63 y1c6 ff8 fs45 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_210",
     "name": "field_210"
@@ -1486,6 +1698,7 @@
   {
     "page": 4,
     "cls": "c x14 y1c7 w82 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_211",
     "name": "field_211"
@@ -1493,6 +1706,7 @@
   {
     "page": 4,
     "cls": "c x14 y1c8 w82 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_212",
     "name": "field_212"
@@ -1500,6 +1714,7 @@
   {
     "page": 4,
     "cls": "c xc3 y1c5 w83 h62",
+    "inner_cls": "t m1 x42 h63 y1c6 ff8 fs45 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_213",
     "name": "field_213"
@@ -1507,6 +1722,7 @@
   {
     "page": 4,
     "cls": "c xc3 y1c7 w83 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_214",
     "name": "field_214"
@@ -1514,6 +1730,7 @@
   {
     "page": 4,
     "cls": "c xc3 y1c8 w83 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_215",
     "name": "field_215"
@@ -1521,6 +1738,7 @@
   {
     "page": 4,
     "cls": "c x3d y1c9 w84 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_216",
     "name": "field_216"
@@ -1528,6 +1746,7 @@
   {
     "page": 4,
     "cls": "c x3d y1ca w84 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_217",
     "name": "field_217"
@@ -1535,6 +1754,7 @@
   {
     "page": 4,
     "cls": "c x3d y1cb w84 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_218",
     "name": "field_218"
@@ -1542,6 +1762,7 @@
   {
     "page": 4,
     "cls": "c x3d y1cc w85 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_219",
     "name": "field_219"
@@ -1549,6 +1770,7 @@
   {
     "page": 4,
     "cls": "c x3d y1cd w85 h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_220",
     "name": "field_220"
@@ -1556,6 +1778,7 @@
   {
     "page": 4,
     "cls": "c x10 y1cc w86 h32",
+    "inner_cls": "t m1 xe6 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_221",
     "name": "field_221"
@@ -1563,6 +1786,7 @@
   {
     "page": 4,
     "cls": "c xe7 y1cc w87 h32",
+    "inner_cls": "t m1 xe6 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_222",
     "name": "field_222"
@@ -1570,6 +1794,7 @@
   {
     "page": 4,
     "cls": "c x10 y1cd w86 h31",
+    "inner_cls": "t m1 xe6 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_223",
     "name": "field_223"
@@ -1577,6 +1802,7 @@
   {
     "page": 4,
     "cls": "c xe7 y1cd w87 h31",
+    "inner_cls": "t m1 xe6 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_224",
     "name": "field_224"
@@ -1584,6 +1810,7 @@
   {
     "page": 4,
     "cls": "c xe8 y1cc w88 h32",
+    "inner_cls": "t m1 xe9 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_225",
     "name": "field_225"
@@ -1591,6 +1818,7 @@
   {
     "page": 4,
     "cls": "c xe8 y1cd w88 h31",
+    "inner_cls": "t m1 xe9 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_226",
     "name": "field_226"
@@ -1598,6 +1826,7 @@
   {
     "page": 4,
     "cls": "c x15 y1ce w89 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_227",
     "name": "field_227"
@@ -1605,6 +1834,7 @@
   {
     "page": 4,
     "cls": "c x15 y1cf w89 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_228",
     "name": "field_228"
@@ -1612,6 +1842,7 @@
   {
     "page": 4,
     "cls": "c x15 y1d0 w89 h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_229",
     "name": "field_229"
@@ -1619,6 +1850,7 @@
   {
     "page": 4,
     "cls": "c x15 y1d1 w89 h36",
+    "inner_cls": "t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_230",
     "name": "field_230"
@@ -1626,6 +1858,7 @@
   {
     "page": 4,
     "cls": "c xea y1d2 w8a h31",
+    "inner_cls": "t m1 x42 h64 y1d3 ff8 fs46 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_231",
     "name": "field_231"
@@ -1633,6 +1866,7 @@
   {
     "page": 4,
     "cls": "c xea y1d4 w8a h3a",
+    "inner_cls": "t m1 x42 h13 y10a ff8 fsf fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_232",
     "name": "field_232"
@@ -1640,6 +1874,7 @@
   {
     "page": 4,
     "cls": "c xea y1d5 w8a h32",
+    "inner_cls": "t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_233",
     "name": "field_233"
@@ -1647,6 +1882,7 @@
   {
     "page": 4,
     "cls": "c xea y1d6 w8a h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_234",
     "name": "field_234"
@@ -1654,6 +1890,7 @@
   {
     "page": 4,
     "cls": "c xea y1d7 w8a h65",
+    "inner_cls": "t m1 x42 h1e y171 ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_235",
     "name": "field_235"
@@ -1661,6 +1898,7 @@
   {
     "page": 4,
     "cls": "c xea y1d8 w8a h3d",
+    "inner_cls": "t m1 x42 h1e y10a ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_236",
     "name": "field_236"
@@ -1668,6 +1906,7 @@
   {
     "page": 4,
     "cls": "c xcd y1d9 w8b h3a",
+    "inner_cls": "t m1 x42 h13 y10a ff8 fsf fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_237",
     "name": "field_237"
@@ -1675,6 +1914,7 @@
   {
     "page": 4,
     "cls": "c xeb y1da w8c h31",
+    "inner_cls": "t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_238",
     "name": "field_238"
@@ -1682,6 +1922,7 @@
   {
     "page": 4,
     "cls": "c xe2 y1db w8d h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_239",
     "name": "chk_seleccionado_si"
@@ -1689,6 +1930,7 @@
   {
     "page": 4,
     "cls": "c xe2 y1dc w8d h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_240",
     "name": "chk_seleccionado_no"
@@ -1696,6 +1938,7 @@
   {
     "page": 4,
     "cls": "c xec y1db w8e h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_241",
     "name": "chk_elegible_si"
@@ -1703,6 +1946,7 @@
   {
     "page": 4,
     "cls": "c xe3 y1dd w8f h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_242",
     "name": "field_242"
@@ -1710,6 +1954,7 @@
   {
     "page": 4,
     "cls": "c x5b y1de w90 h3e",
+    "inner_cls": "t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_243",
     "name": "field_243"
@@ -1717,6 +1962,7 @@
   {
     "page": 4,
     "cls": "c xe4 y1df w91 h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_244",
     "name": "field_244"
@@ -1724,6 +1970,7 @@
   {
     "page": 4,
     "cls": "c x36 y1df w92 h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_245",
     "name": "field_245"
@@ -1731,6 +1978,7 @@
   {
     "page": 4,
     "cls": "c x70 y1df w93 h31",
+    "inner_cls": "t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0",
     "type": "INPUT",
     "id": "field_246",
     "name": "field_246"

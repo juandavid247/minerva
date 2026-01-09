@@ -1,0 +1,1237 @@
+[
+  {
+    "name": "fecha_p1_d",
+    "cls": "c x3e y4e w2 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "fecha_p1_m",
+    "cls": "c x40 y4e w3 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "fecha_p1_a",
+    "cls": "c x33 y4e w4 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "empleo_solicitado",
+    "cls": "c x4 y4e w5 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "codigo_cargo",
+    "cls": "c x43 y4e w6 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "apellido_aspirante",
+    "cls": "c x3 y50 w7 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "nombre_aspirante",
+    "cls": "c xc y50 w8 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "direccion_domicilio",
+    "cls": "c x3 y51 w9 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "ciudad_aspirante",
+    "cls": "c xf y52 wa h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "telefono_aspirante",
+    "cls": "c x3 y53 wb h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "celular_aspirante",
+    "cls": "c xc y54 wc h12",
+    "type": "INPUT"
+  },
+  {
+    "name": "email_aspirante",
+    "cls": "c x3 y56 wd h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "profesion_aspirante",
+    "cls": "c xe y57 we h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "nacionalidad_aspirante",
+    "cls": "c x3 y58 wf h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "estado_civil_aspirante",
+    "cls": "c x44 y58 w10 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "tiempo_experiencia_laboral",
+    "cls": "c x45 y58 w11 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "cedula_numero",
+    "cls": "c x3 y5b w15 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "cedula_extranjeria_numero",
+    "cls": "c x49 y5b w16 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "cedula_expedida_en",
+    "cls": "c x4a y5b w17 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "libreta_militar_numero",
+    "cls": "c x4b y5c w18 h10",
+    "type": "INPUT"
+  },
+  {
+    "name": "tarjeta_profesional_numero",
+    "cls": "c x16 y62 w21 h16",
+    "type": "INPUT"
+  },
+  {
+    "name": "ciudad_mayor_parte_vida",
+    "cls": "c x59 y6e w2c h1d",
+    "type": "INPUT"
+  },
+  {
+    "name": "regiones_trabajado",
+    "cls": "c x59 y70 w2c h1f",
+    "type": "INPUT"
+  },
+  {
+    "name": "tiempo_residencia",
+    "cls": "c x5a y72 w2d h20",
+    "type": "INPUT"
+  },
+  {
+    "name": "obligaciones_economicas_mensuales",
+    "cls": "c x5a y73 w2d h22",
+    "type": "INPUT"
+  },
+  {
+    "name": "aspiracion_salarial",
+    "cls": "c x5a y74 w2d h14",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_49",
+    "cls": "c x91 ye5 w2e h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_50",
+    "cls": "c x92 ye5 w2f h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_51",
+    "cls": "c x93 ye5 w30 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_52",
+    "cls": "c x91 ye7 w31 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_53",
+    "cls": "c x5d ye7 w32 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_54",
+    "cls": "c x94 ye7 w33 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_55",
+    "cls": "c x95 ye7 w34 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_56",
+    "cls": "c x63 ye9 w35 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_57",
+    "cls": "c x59 yea w36 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_58",
+    "cls": "c x97 yeb w37 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_59",
+    "cls": "c x91 yec w38 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_60",
+    "cls": "c x92 yec w39 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_61",
+    "cls": "c x5e yed w3a h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_62",
+    "cls": "c x5e yee w3a h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_63",
+    "cls": "c x5e yef w3a h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_64",
+    "cls": "c x5e yf0 w3a h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_65",
+    "cls": "c x91 yf1 w3b h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_66",
+    "cls": "c x92 yee w3c h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_67",
+    "cls": "c x91 yef w3b h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_68",
+    "cls": "c x92 yf0 w3d h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_69",
+    "cls": "c x92 yef w3d h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_70",
+    "cls": "c x91 yf0 w3b h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_71",
+    "cls": "c x98 yf2 w3e h34",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_72",
+    "cls": "c x32 yf2 w1a h34",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_73",
+    "cls": "c x74 yf2 w3f h34",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_74",
+    "cls": "c x99 yf2 w40 h34",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_75",
+    "cls": "c x9a yf4 w41 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_76",
+    "cls": "c x98 yf6 w3e h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_77",
+    "cls": "c x32 yf6 w1a h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_78",
+    "cls": "c x74 yf6 w3f h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_79",
+    "cls": "c x99 yf6 w40 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_80",
+    "cls": "c x9a yf7 w41 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_81",
+    "cls": "c x98 yf8 w3e h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_82",
+    "cls": "c x9a yf9 w41 h38",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_83",
+    "cls": "c x98 yfb w3e h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_84",
+    "cls": "c x9a yfc w41 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_85",
+    "cls": "c x98 yfd w3e h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_86",
+    "cls": "c x32 yfd w1a h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_87",
+    "cls": "c x74 yfd w3f h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_88",
+    "cls": "c x99 yfd w40 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_89",
+    "cls": "c x9a yfe w41 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_90",
+    "cls": "c x99 yff w40 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_91",
+    "cls": "c x74 yff w3f h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_92",
+    "cls": "c x32 yff w1a h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_93",
+    "cls": "c x98 yff w3e h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_95",
+    "cls": "c x74 yfb w3f h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_96",
+    "cls": "c x99 yfb w40 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_97",
+    "cls": "c x9a y100 w41 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_98",
+    "cls": "c x99 y101 w40 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_99",
+    "cls": "c x74 y101 w3f h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_101",
+    "cls": "c x98 y101 w3e h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_103",
+    "cls": "c x74 yf8 w3f h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_104",
+    "cls": "c x99 yf8 w40 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_105",
+    "cls": "c x9a y102 w41 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_106",
+    "cls": "c x98 y103 w42 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_107",
+    "cls": "c x9c y103 w43 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_108",
+    "cls": "c x70 y103 w44 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_109",
+    "cls": "c x63 y104 w45 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_110",
+    "cls": "c x6f y104 w46 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_111",
+    "cls": "c x95 y104 w34 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_112",
+    "cls": "c x91 y105 w47 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_114",
+    "cls": "c x20 y107 w48 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_115",
+    "cls": "c x9d y107 w49 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_117",
+    "cls": "c x20 y108 w4a h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_118",
+    "cls": "c x9e y109 w4b h3a",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_120",
+    "cls": "c x8a y10d w4c h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_121",
+    "cls": "c xc y10e w4d h3b",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_122",
+    "cls": "c xc y10f w4e h3c",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_123",
+    "cls": "c x9f y110 w4f h3d",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_124",
+    "cls": "c x9f y111 w4f h3d",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_125",
+    "cls": "c x9f y112 w4f h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_126",
+    "cls": "c x9f y113 w4f h3e",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_127",
+    "cls": "c x9f y114 w4f h3e",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_128",
+    "cls": "c x9f y115 w4f h3e",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_129",
+    "cls": "c x9f y116 w4f h3f",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_130",
+    "cls": "c x9f y117 w4f h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_131",
+    "cls": "c x9f y118 w4f h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_132",
+    "cls": "c x9f y119 w4f h3c",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_133",
+    "cls": "c x3 y156 w50 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_134",
+    "cls": "c xb0 y156 w51 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_135",
+    "cls": "c xb1 y156 w52 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_136",
+    "cls": "c x3 y157 w53 h46",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_137",
+    "cls": "c xb2 y157 w54 h46",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_138",
+    "cls": "c xb3 y157 w55 h46",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_139",
+    "cls": "c xb4 y157 w55 h46",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_140",
+    "cls": "c x80 y159 w56 h47",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_141",
+    "cls": "c xb5 y157 w57 h46",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_142",
+    "cls": "c xb6 y157 w58 h46",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_143",
+    "cls": "c xb7 y157 w59 h46",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_144",
+    "cls": "c x3 y15b w5a h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_145",
+    "cls": "c x30 y15b w5b h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_146",
+    "cls": "c x10 y15b w5c h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_147",
+    "cls": "c xa0 y15b w5d h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_148",
+    "cls": "c x3 y15c w5e h46",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_149",
+    "cls": "c x3 y15d w5e h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_150",
+    "cls": "c x3 y15e w5e h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_151",
+    "cls": "c xa3 y159 w5f h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_152",
+    "cls": "c x3 y15f w5e h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_153",
+    "cls": "c xb9 y160 w60 h38",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_154",
+    "cls": "c x3 y161 w61 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_155",
+    "cls": "c xb9 y162 w62 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_156",
+    "cls": "c x3 y163 w63 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_159",
+    "cls": "c x3 y166 w63 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_160",
+    "cls": "c x3 y167 w63 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_161",
+    "cls": "c x3 y168 w63 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_162",
+    "cls": "c xa0 y169 w5d h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_163",
+    "cls": "c xba y169 w65 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_164",
+    "cls": "c x32 y169 w66 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_165",
+    "cls": "c x3 y169 w67 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_166",
+    "cls": "c xb7 y16a w68 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_167",
+    "cls": "c xb6 y16a w57 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_168",
+    "cls": "c xb5 y16a w57 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_169",
+    "cls": "c xb4 y16a w55 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_170",
+    "cls": "c xb3 y16a w57 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_171",
+    "cls": "c xbb y16a w69 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_172",
+    "cls": "c x3 y16a w6a h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_175",
+    "cls": "c x5e y16a w6b h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_176",
+    "cls": "c x5e y157 w6b h46",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_177",
+    "cls": "c x3 y16b w6c h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_178",
+    "cls": "c xb9 y16c w6d h3e",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_179",
+    "cls": "c x3 y16d w6e h3e",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_180",
+    "cls": "c x80 y16e w6f h49",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_181",
+    "cls": "c xa3 y16e w70 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_182",
+    "cls": "c x3 y170 w6e h4a",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_183",
+    "cls": "c x3 y172 w6e h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_184",
+    "cls": "c x3 y173 w6e h3a",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_189",
+    "cls": "c xb7 y175 w59 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_190",
+    "cls": "c xb6 y175 w57 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_191",
+    "cls": "c xb5 y175 w57 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_192",
+    "cls": "c x5e y175 w75 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_193",
+    "cls": "c xb4 y175 w57 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_194",
+    "cls": "c xb3 y175 w57 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_195",
+    "cls": "c xbb y175 w69 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_196",
+    "cls": "c x3 y175 w76 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_199",
+    "cls": "c xbd y176 w79 h3e",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_200",
+    "cls": "c xbf y177 w7b h3c",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_201",
+    "cls": "c x4f y177 w7c h3c",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_202",
+    "cls": "c xc0 y177 w7d h3c",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_203",
+    "cls": "c xc1 y176 w7e h3e",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_204",
+    "cls": "c x6e y1c5 w7f h62",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_205",
+    "cls": "c x6e y1c7 w7f h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_206",
+    "cls": "c x6e y1c8 w7f h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_207",
+    "cls": "c x1a y1c7 w80 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_208",
+    "cls": "c x1a y1c5 w80 h62",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_209",
+    "cls": "c x1a y1c8 w80 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_210",
+    "cls": "c x14 y1c5 w81 h62",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_211",
+    "cls": "c x14 y1c7 w82 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_212",
+    "cls": "c x14 y1c8 w82 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_213",
+    "cls": "c xc3 y1c5 w83 h62",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_214",
+    "cls": "c xc3 y1c7 w83 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_215",
+    "cls": "c xc3 y1c8 w83 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_216",
+    "cls": "c x3d y1c9 w84 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_217",
+    "cls": "c x3d y1ca w84 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_218",
+    "cls": "c x3d y1cb w84 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_219",
+    "cls": "c x3d y1cc w85 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_220",
+    "cls": "c x3d y1cd w85 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_221",
+    "cls": "c x10 y1cc w86 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_222",
+    "cls": "c xe7 y1cc w87 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_223",
+    "cls": "c x10 y1cd w86 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_224",
+    "cls": "c xe7 y1cd w87 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_225",
+    "cls": "c xe8 y1cc w88 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_226",
+    "cls": "c xe8 y1cd w88 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_227",
+    "cls": "c x15 y1ce w89 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_228",
+    "cls": "c x15 y1cf w89 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_229",
+    "cls": "c x15 y1d0 w89 h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_230",
+    "cls": "c x15 y1d1 w89 h36",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_231",
+    "cls": "c xea y1d2 w8a h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_232",
+    "cls": "c xea y1d4 w8a h3a",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_233",
+    "cls": "c xea y1d5 w8a h32",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_234",
+    "cls": "c xea y1d6 w8a h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_235",
+    "cls": "c xea y1d7 w8a h65",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_236",
+    "cls": "c xea y1d8 w8a h3d",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_237",
+    "cls": "c xcd y1d9 w8b h3a",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_238",
+    "cls": "c xeb y1da w8c h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_242",
+    "cls": "c xe3 y1dd w8f h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_243",
+    "cls": "c x5b y1de w90 h3e",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_244",
+    "cls": "c xe4 y1df w91 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_245",
+    "cls": "c x36 y1df w92 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "field_246",
+    "cls": "c x70 y1df w93 h31",
+    "type": "INPUT"
+  },
+  {
+    "name": "chk_cedula_ciudadania",
+    "cls": "c x46 y59 w12 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_cedula_extranjeria",
+    "cls": "c x47 y5a w13 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_segunda_clase",
+    "cls": "c x48 y5a w14 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_primera_clase",
+    "cls": "c x48 y59 w14 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_recomienda",
+    "cls": "c x4c y5c w19 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_trabajando",
+    "cls": "c x4d y5d w1a h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_no_trabajando",
+    "cls": "c x4e y5d w1b h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_no_recomienda",
+    "cls": "c x4f y5d w1c h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_parientes",
+    "cls": "c x51 y5e w1d h14",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_no_parientes",
+    "cls": "c x52 y5d w1e h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_vehiculo",
+    "cls": "c x46 y60 w1f h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_no_vehiculo",
+    "cls": "c x53 y61 w20 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_propia",
+    "cls": "c x54 y64 w22 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_alquilada_p1",
+    "cls": "c x2b y64 w23 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_anuncio",
+    "cls": "c x55 y65 w24 h18",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_independiente",
+    "cls": "c x56 y65 w25 h18",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_empleado",
+    "cls": "c x32 y65 w26 h18",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_trabajo_antes",
+    "cls": "c x32 y67 w27 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_no_trabajo_antes",
+    "cls": "c x57 y67 w28 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_solicito_antes",
+    "cls": "c x45 y68 w28 h10",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_agencia",
+    "cls": "c x54 y69 w29 h18",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_amigo",
+    "cls": "c x54 y6a w2a h14",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_otro",
+    "cls": "c x58 y6c w2b h1b",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_tecnico",
+    "cls": "c x32 yfb w1a h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_tecnologo",
+    "cls": "c x32 y101 w1a h31",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_profesional",
+    "cls": "c x32 yf8 w1a h31",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_sistemas",
+    "cls": "c x20 y106 w48 h31",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_no_sistemas",
+    "cls": "c x9d y106 w49 h31",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_idiomas",
+    "cls": "c x8a y10b w4c h31",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_no_distinciones",
+    "cls": "c x80 y164 w56 h48",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_distinciones",
+    "cls": "c xa3 y164 w64 h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_no_deporte",
+    "cls": "c xb1 y161 w52 h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_deporte",
+    "cls": "c xb0 y161 w51 h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_eps_si",
+    "cls": "c xa0 y174 w71 h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_eps_no",
+    "cls": "c xbc y174 w72 h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_pension_si",
+    "cls": "c x32 y174 w73 h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_pension_no",
+    "cls": "c x3 y174 w74 h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_no_ingreso",
+    "cls": "c xb1 y16b w77 h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_si_ingreso",
+    "cls": "c xb0 y16b w78 h32",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_seleccionado_si",
+    "cls": "c xe2 y1db w8d h31",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_seleccionado_no",
+    "cls": "c xe2 y1dc w8d h31",
+    "type": "CHECKBOX"
+  },
+  {
+    "name": "chk_elegible_si",
+    "cls": "c xec y1db w8e h31",
+    "type": "CHECKBOX"
+  }
+]
