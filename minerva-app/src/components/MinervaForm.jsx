@@ -6,7 +6,7 @@ import OverlayCheckbox from "./OverlayCheckbox";
 import ImageUpload from "./ImageUpload";
 import { PAGE_1_COORDINATES, PAGE_2_COORDINATES, PAGE_3_COORDINATES, PAGE_4_COORDINATES } from "../data/formCoordinates";
 
-const MinervaForm = () => {
+const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
   const [formData, setFormData] = useState({
     cedula_firma: "",
     apellido_aspirante: "",
@@ -261,7 +261,7 @@ const MinervaForm = () => {
 
   // Calibration State
   const [calibrationPoints, setCalibrationPoints] = useState([]);
-  const [isCalibrationMode, setIsCalibrationMode] = useState(false);
+  const isCalibrationMode = externalCalibrationMode || false;
   const [overlayState, setOverlayState] = useState({});
 
   const exportCalibrationData = () => {
@@ -329,58 +329,50 @@ const MinervaForm = () => {
     }));
   };
 
-  const toggleCalibrationMode = () => {
-    setIsCalibrationMode(prev => !prev);
-  };
-
   return (
     <div className="minerva-form-container">
-      <div style={{
-        position: 'fixed',
-        bottom: '20px',
-        right: '20px',
-        zIndex: 9999,
-        background: 'white',
-        padding: '10px',
-        border: isCalibrationMode ? '2px solid red' : '1px solid #ccc',
-        borderRadius: '8px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '5px'
-      }}>
-        <button onClick={toggleCalibrationMode} style={{ padding: '5px 10px', cursor: 'pointer' }}>
-          {isCalibrationMode ? '🛑 Desactivar Calibración' : '🛠️ Calibrar'}
-        </button>
-
-        {isCalibrationMode && (
-          <>
-            <h3 style={{ margin: '5px 0', color: 'red', fontSize: '14px' }}>Modo Calibración</h3>
-            <p style={{ margin: '5px 0' }}>Puntos: <strong>{calibrationPoints.length}</strong></p>
-            <button
-              onClick={exportCalibrationData}
-              style={{
-                background: 'red',
-                color: 'white',
-                border: 'none',
-                padding: '8px 16px',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                fontWeight: 'bold'
-              }}
-            >
-              EXPORTAR DATOS
-            </button>
-          </>
-        )}
-      </div>
+      {/* Calibration Info Panel */}
+      {isCalibrationMode && (
+        <div style={{
+          position: 'fixed',
+          bottom: '20px',
+          left: '20px',
+          zIndex: 9999,
+          background: 'white',
+          padding: '15px',
+          border: '2px solid red',
+          borderRadius: '8px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '10px'
+        }}>
+          <h3 style={{ margin: '0', color: 'red', fontSize: '16px' }}>📍 Modo Calibración</h3>
+          <p style={{ margin: '0', fontSize: '14px' }}>Puntos capturados: <strong>{calibrationPoints.length}</strong></p>
+          <button
+            onClick={exportCalibrationData}
+            style={{
+              background: 'red',
+              color: 'white',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              fontSize: '14px'
+            }}
+          >
+            📋 EXPORTAR DATOS
+          </button>
+        </div>
+      )}
 
       <div
         id="page-container"
         onClick={handleCalibrationClick}
         className={isCalibrationMode ? "is-calibrating" : ""}
-        style={{ cursor: 'crosshair' }}
+        style={{ cursor: isCalibrationMode ? 'crosshair' : 'default' }}
       >
         <div id="pf1" className="pf w0 h0" data-page-no="1">
           <div className="pc pc1 w0 h0">
