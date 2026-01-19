@@ -31,7 +31,10 @@ const ImageUpload = ({ style, className, borderRadius = "0px" }) => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     background: 'rgba(52, 152, 219, 0.05)',
-                    border: '1px dashed #3498db',
+                    borderTop: '1px dashed #3498db',
+                    borderLeft: '1px dashed #3498db',
+                    borderRight: '1px dashed #3498db',
+                    borderBottom: '1px dashed #3498db',
                     borderRadius: '4px',
                 }}
             >
@@ -70,7 +73,10 @@ const ImageUpload = ({ style, className, borderRadius = "0px" }) => {
                 }}
                 style={{
                     zIndex: 2000,
-                    border: '1px solid rgba(52, 152, 219, 0.3)',
+                    borderTop: '1px solid rgba(52, 152, 219, 0.3)',
+                    borderLeft: '1px solid rgba(52, 152, 219, 0.3)',
+                    borderRight: '1px solid rgba(52, 152, 219, 0.3)',
+                    borderBottom: '1px solid rgba(52, 152, 219, 0.3)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'

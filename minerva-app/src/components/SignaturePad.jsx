@@ -20,6 +20,9 @@ const SignaturePad = () => {
         position: 'absolute',
         top: 0,
         left: 0,
+        borderTop: 'none',
+        borderLeft: 'none',
+        borderRight: 'none',
         borderBottom: '1px solid #000',
         backgroundColor: 'rgba(255, 255, 255, 0.1)'
     };

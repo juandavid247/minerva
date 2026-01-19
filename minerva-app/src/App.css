@@ -18,16 +18,14 @@
 
   /* Use zoom instead of transform for better layout scaling */
   .form-container {
-    transform: none !important;
-    zoom: 0.85 !important;
-    /* Scale layout directly */
+    transform: scale(1) !important;
+    zoom: normal !important;
+    /* Force exact design width to maintain absolute positioning */
     width: 918px !important;
-    /* Match native form width */
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
-    position: static !important;
     display: block !important;
   }
 
@@ -60,10 +58,15 @@
     overflow: visible !important;
   }
 
-  /* Fix inputs exploding layout in print */
   .minerva-input,
   .t:has(> .minerva-input) {
     width: 100% !important;
+  }
+
+  /* Ensure photo container maintains correct position in print */
+  .photo-upload-container {
+    position: absolute !important;
+    display: flex !important;
   }
 
   /* Remove page break after the last page */
@@ -118,12 +121,15 @@
 
 /* Re-enable interaction for inputs and pads */
 .minerva-input,
-.photo-upload-container,
-.photo-upload-container *,
 .signature-pad-container,
 .signature-pad-container * {
   pointer-events: auto !important;
   display: block !important;
+}
+
+.photo-upload-container {
+  pointer-events: auto !important;
+  display: flex !important;
 }
 
 /* Force only the immediate text container (.t) of inputs to expand to fill the clipping box (.c) */
@@ -287,8 +293,20 @@
 }
 
 .download-btn:active,
-.calibrate-btn:active {
+.calibrate-btn:active,
+.submit-btn:active {
   transform: translateY(0);
+}
+
+.submit-btn {
+  background: #28a745;
+  color: white;
+}
+
+.submit-btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 /* Form Container */

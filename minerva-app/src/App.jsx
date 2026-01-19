@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import MinervaForm from './components/MinervaForm'
 
 function App() {
   const [zoom, setZoom] = useState(100);
   const [isCalibrationMode, setIsCalibrationMode] = useState(false);
+  const formRef = useRef(null);
 
   const handlePrint = () => {
     window.print();
@@ -16,6 +17,14 @@ function App() {
 
   const toggleCalibrationMode = () => {
     setIsCalibrationMode(prev => !prev);
+  };
+
+  const handleSubmit = () => {
+    if (formRef.current && formRef.current.getFormData) {
+      const formData = formRef.current.getFormData();
+      console.log('📋 Form Data:', JSON.stringify(formData, null, 2));
+      alert('✅ Datos del formulario exportados a la consola. Presiona F12 para ver el JSON completo.');
+    }
   };
 
   const increaseZoom = () => {
@@ -47,6 +56,14 @@ function App() {
           >
             ⬇ Descargar PDF
           </button>
+
+          <button
+            onClick={handleSubmit}
+            className="action-btn submit-btn"
+            title="Enviar formulario"
+          >
+            📤 Enviar
+          </button>
         </div>
 
         {/* Zoom Controls - Right Side */}
@@ -74,7 +91,7 @@ function App() {
         className="form-container"
         style={{ transform: `scale(${zoom / 100})` }}
       >
-        <MinervaForm isCalibrationMode={isCalibrationMode} />
+        <MinervaForm ref={formRef} isCalibrationMode={isCalibrationMode} />
       </div>
     </div>
   )

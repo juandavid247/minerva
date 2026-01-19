@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PhotoUpload = () => {
+const PhotoUpload = ({ style }) => {
     const [preview, setPreview] = useState(null);
 
     const handleFileChange = (e) => {
@@ -15,21 +15,7 @@ const PhotoUpload = () => {
     };
 
     const containerStyle = {
-        position: 'absolute',
-        top: '-400px',
-        left: '50%',
-        transform: 'translateX(-17%)',
-        width: '355px',
-        height: '456px',
-        border: '1px solid rgb(204 204 204 / 0%)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        overflow: 'hidden',
-        cursor: 'pointer',
-        pointerEvents: 'auto',
-        zIndex: 1000,
-        backgroundColor: 'rgb(249 249 249 / 0%)',
+        ...style,
     };
 
     const inputStyle = {
@@ -60,7 +46,7 @@ const PhotoUpload = () => {
                 <img
                     src={preview}
                     alt="Preview"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '20px' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
                 />
             ) : (
                 <div style={{ textAlign: 'center', color: 'rgb(153, 153, 153)', fontSize: '12px' }}>

@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, forwardRef, useImperativeHandle } from "react";
 import "./MinervaForm.css";
 import PhotoUpload from "./PhotoUpload";
 import SignaturePad from "./SignaturePad";
-import OverlayCheckbox from "./OverlayCheckbox";
+import FastOverlayCheckbox from "./FastOverlayCheckbox";
 import ImageUpload from "./ImageUpload";
+import FastInput from "./FastInput";
 import { PAGE_1_COORDINATES, PAGE_2_COORDINATES, PAGE_3_COORDINATES, PAGE_4_COORDINATES } from "../data/formCoordinates";
 
-const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
+const MinervaForm = forwardRef(({ isCalibrationMode: externalCalibrationMode }, ref) => {
   const [formData, setFormData] = useState({
     cedula_firma: "",
     apellido_aspirante: "",
@@ -280,6 +281,11 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
     setFormData((prev) => ({ ...prev, [name]: checked }));
   };
 
+  // Expose formData to parent via ref
+  useImperativeHandle(ref, () => ({
+    getFormData: () => formData
+  }));
+
   const handleCalibrationClick = (e) => {
     if (!isCalibrationMode) return;
     // Debug: Log everything
@@ -378,7 +384,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
           <div className="pc pc1 w0 h0">
             {/* Page 1 Overlays */}
             {PAGE_1_COORDINATES.map((point) => (
-              <OverlayCheckbox
+              <FastOverlayCheckbox
                 key={point.id}
                 id={point.id}
                 left={point.left}
@@ -392,6 +398,10 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
               alt=""
               src="data:image/png;base64,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"
             />
+
+            <div className="photo-overlay">
+              <PhotoUpload />
+            </div>
             <div className="t m0 x1 h1 y1 ff1 fs0 fc0 sc0 ls0 ws0">
               P<span className="_ _0"></span>ARA<span className="_ _1"></span>{" "}
               SOLICITUD DE EMPLEO
@@ -425,9 +435,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             <div className="t m2 xa h2 yb ff1 fs1 fc0 sc0 ls0 ws0">
               T<span className="_ _0"></span>amaño 3 x 4 cm.
             </div>
-            <div className="t m2 xb h5 yc ff1 fs4 fc0 sc0 ls0 ws0">
-              <PhotoUpload />
-            </div>
+
             <div className="t m4 x3 h2 yd ff1 fs1 fc0 sc0 ls0 ws0">
               Apellido(s) del aspirante
             </div>
@@ -683,7 +691,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3e y4e w2 h10">
               <div className="t m1 x3f h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_0"
                   name="fecha_p1_d"
@@ -696,7 +704,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x40 y4e w3 h10">
               <div className="t m1 x3f h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_1"
                   name="fecha_p1_m"
@@ -709,7 +717,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x33 y4e w4 h10">
               <div className="t m1 x41 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_2"
                   name="fecha_p1_a"
@@ -722,7 +730,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x4 y4e w5 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_3"
                   name="empleo_solicitado"
@@ -735,7 +743,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x43 y4e w6 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_4"
                   name="codigo_cargo"
@@ -748,7 +756,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y50 w7 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_5"
                   name="apellido_aspirante"
@@ -761,7 +769,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xc y50 w8 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_6"
                   name="nombre_aspirante"
@@ -774,7 +782,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y51 w9 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_7"
                   name="direccion_domicilio"
@@ -787,7 +795,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xf y52 wa h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_8"
                   name="ciudad_aspirante"
@@ -800,7 +808,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y53 wb h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_9"
                   name="telefono_aspirante"
@@ -813,7 +821,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xc y54 wc h12">
               <div className="t m1 x42 h13 y55 ff8 fsf fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_10"
                   name="celular_aspirante"
@@ -826,7 +834,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y56 wd h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_11"
                   name="email_aspirante"
@@ -839,7 +847,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xe y57 we h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_12"
                   name="profesion_aspirante"
@@ -852,7 +860,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y58 wf h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_13"
                   name="nacionalidad_aspirante"
@@ -865,7 +873,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x44 y58 w10 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_14"
                   name="estado_civil_aspirante"
@@ -878,7 +886,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x45 y58 w11 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_15"
                   name="tiempo_experiencia_laboral"
@@ -891,7 +899,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x46 y59 w12 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_16"
                   name="chk_cedula_ciudadania"
@@ -904,7 +912,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x47 y5a w13 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_17"
                   name="chk_cedula_extranjeria"
@@ -917,7 +925,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x48 y5a w14 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_18"
                   name="chk_segunda_clase"
@@ -930,7 +938,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x48 y59 w14 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_19"
                   name="chk_primera_clase"
@@ -943,7 +951,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y5b w15 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_20"
                   name="cedula_numero"
@@ -956,7 +964,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x49 y5b w16 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_21"
                   name="cedula_extranjeria_numero"
@@ -969,7 +977,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x4a y5b w17 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_22"
                   name="cedula_expedida_en"
@@ -982,7 +990,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x4b y5c w18 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_23"
                   name="libreta_militar_numero"
@@ -995,7 +1003,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x4c y5c w19 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_24"
                   name="chk_si_recomienda"
@@ -1008,7 +1016,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x4d y5d w1a h10">
               <div className="t m1 x3f h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_25"
                   name="chk_si_trabajando"
@@ -1021,7 +1029,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x4e y5d w1b h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_26"
                   name="chk_no_trabajando"
@@ -1034,7 +1042,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x4f y5d w1c h10">
               <div className="t m1 x50 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_27"
                   name="chk_no_recomienda"
@@ -1047,7 +1055,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x51 y5e w1d h14">
               <div className="t m1 x42 h15 y5f ff8 fs10 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_28"
                   name="chk_si_parientes"
@@ -1060,7 +1068,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x52 y5d w1e h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_29"
                   name="chk_no_parientes"
@@ -1073,7 +1081,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x46 y60 w1f h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_30"
                   name="chk_si_vehiculo"
@@ -1086,7 +1094,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x53 y61 w20 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_31"
                   name="chk_no_vehiculo"
@@ -1099,7 +1107,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x16 y62 w21 h16">
               <div className="t m1 x42 h17 y63 ff8 fs11 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_32"
                   name="tarjeta_profesional_numero"
@@ -1112,7 +1120,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x54 y64 w22 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_33"
                   name="chk_propia"
@@ -1125,7 +1133,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x2b y64 w23 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_34"
                   name="chk_alquilada_p1"
@@ -1138,7 +1146,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x55 y65 w24 h18">
               <div className="t m1 x42 h19 y66 ff8 fs12 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_35"
                   name="chk_anuncio"
@@ -1151,7 +1159,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x56 y65 w25 h18">
               <div className="t m1 x42 h19 y66 ff8 fs12 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_36"
                   name="chk_independiente"
@@ -1164,7 +1172,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 y65 w26 h18">
               <div className="t m1 x42 h19 y66 ff8 fs12 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_37"
                   name="chk_empleado"
@@ -1177,7 +1185,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 y67 w27 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_38"
                   name="chk_si_trabajo_antes"
@@ -1190,7 +1198,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x57 y67 w28 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_39"
                   name="chk_no_trabajo_antes"
@@ -1203,7 +1211,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x45 y68 w28 h10">
               <div className="t m1 x42 h11 y4f ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_40"
                   name="chk_si_solicito_antes"
@@ -1216,7 +1224,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x54 y69 w29 h18">
               <div className="t m1 x42 h19 y66 ff8 fs12 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_41"
                   name="chk_agencia"
@@ -1229,7 +1237,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x54 y6a w2a h14">
               <div className="t m1 x42 h1a y6b ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_42"
                   name="chk_amigo"
@@ -1242,7 +1250,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x58 y6c w2b h1b">
               <div className="t m1 x0 h1c y6d ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_43"
                   name="chk_otro"
@@ -1255,7 +1263,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x59 y6e w2c h1d">
               <div className="t m1 x42 h1e y6f ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_44"
                   name="ciudad_mayor_parte_vida"
@@ -1268,7 +1276,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x59 y70 w2c h1f">
               <div className="t m1 x42 h11 y71 ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_45"
                   name="regiones_trabajado"
@@ -1281,7 +1289,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5a y72 w2d h20">
               <div className="t m1 x42 h21 y71 ff8 fs16 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_46"
                   name="tiempo_residencia"
@@ -1294,7 +1302,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5a y73 w2d h22">
               <div className="t m1 x42 h1e y6b ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_47"
                   name="obligaciones_economicas_mensuales"
@@ -1307,7 +1315,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5a y74 w2d h14">
               <div className="t m1 x42 h1e y6b ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_48"
                   name="aspiracion_salarial"
@@ -1328,7 +1336,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
           <div className="pc pc2 w0 h0">
             {/* Page 2 Overlays */}
             {PAGE_2_COORDINATES.map((point) => (
-              <OverlayCheckbox
+              <FastOverlayCheckbox
                 key={point.id}
                 id={point.id}
                 left={point.left}
@@ -1821,7 +1829,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             <div className="t m1 x90 hd y4b ff6 fsc fc2 sc0 ls0 ws0">2</div>
             <div className="c x91 ye5 w2e h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_49"
                   name="field_49"
@@ -1834,7 +1842,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x92 ye5 w2f h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_50"
                   name="field_50"
@@ -1847,7 +1855,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x93 ye5 w30 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_51"
                   name="field_51"
@@ -1860,7 +1868,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x91 ye7 w31 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_52"
                   name="field_52"
@@ -1873,7 +1881,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5d ye7 w32 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_53"
                   name="field_53"
@@ -1886,7 +1894,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x94 ye7 w33 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_54"
                   name="field_54"
@@ -1899,7 +1907,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x95 ye7 w34 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_55"
                   name="field_55"
@@ -1912,7 +1920,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x63 ye9 w35 h32">
               <div className="t m1 x96 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_56"
                   name="field_56"
@@ -1925,7 +1933,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x59 yea w36 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_57"
                   name="field_57"
@@ -1938,7 +1946,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x97 yeb w37 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_58"
                   name="field_58"
@@ -1951,7 +1959,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x91 yec w38 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_59"
                   name="field_59"
@@ -1964,7 +1972,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x92 yec w39 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_60"
                   name="field_60"
@@ -1977,7 +1985,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5e yed w3a h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_61"
                   name="field_61"
@@ -1990,7 +1998,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5e yee w3a h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_62"
                   name="field_62"
@@ -2003,7 +2011,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5e yef w3a h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_63"
                   name="field_63"
@@ -2016,7 +2024,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5e yf0 w3a h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_64"
                   name="field_64"
@@ -2029,7 +2037,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x91 yf1 w3b h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_65"
                   name="field_65"
@@ -2042,7 +2050,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x92 yee w3c h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_66"
                   name="field_66"
@@ -2055,7 +2063,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x91 yef w3b h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_67"
                   name="field_67"
@@ -2068,7 +2076,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x92 yf0 w3d h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_68"
                   name="field_68"
@@ -2081,7 +2089,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x92 yef w3d h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_69"
                   name="field_69"
@@ -2094,7 +2102,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x91 yf0 w3b h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_70"
                   name="field_70"
@@ -2107,7 +2115,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x98 yf2 w3e h34">
               <div className="t m1 x50 h35 yf3 ff8 fs25 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_71"
                   name="field_71"
@@ -2120,7 +2128,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 yf2 w1a h34">
               <div className="t m1 x3f h35 yf3 ff8 fs25 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_72"
                   name="field_72"
@@ -2133,7 +2141,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x74 yf2 w3f h34">
               <div className="t m1 x42 h35 yf3 ff8 fs25 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_73"
                   name="field_73"
@@ -2146,7 +2154,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x99 yf2 w40 h34">
               <div className="t m1 x42 h35 yf3 ff8 fs25 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_74"
                   name="field_74"
@@ -2159,7 +2167,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9a yf4 w41 h36">
               <div className="t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_75"
                   name="field_75"
@@ -2172,7 +2180,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x98 yf6 w3e h32">
               <div className="t m1 x50 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_76"
                   name="field_76"
@@ -2185,7 +2193,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 yf6 w1a h32">
               <div className="t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_77"
                   name="field_77"
@@ -2198,7 +2206,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x74 yf6 w3f h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_78"
                   name="field_78"
@@ -2211,7 +2219,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x99 yf6 w40 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_79"
                   name="field_79"
@@ -2224,7 +2232,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9a yf7 w41 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_80"
                   name="field_80"
@@ -2237,7 +2245,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x98 yf8 w3e h31">
               <div className="t m1 x50 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_81"
                   name="field_81"
@@ -2250,7 +2258,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9a yf9 w41 h38">
               <div className="t m1 x42 h39 yfa ff8 fs27 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_82"
                   name="field_82"
@@ -2263,7 +2271,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x98 yfb w3e h32">
               <div className="t m1 x50 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_83"
                   name="field_83"
@@ -2276,7 +2284,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9a yfc w41 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_84"
                   name="field_84"
@@ -2289,7 +2297,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x98 yfd w3e h36">
               <div className="t m1 x50 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_85"
                   name="field_85"
@@ -2302,7 +2310,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 yfd w1a h36">
               <div className="t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_86"
                   name="field_86"
@@ -2315,7 +2323,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x74 yfd w3f h36">
               <div className="t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_87"
                   name="field_87"
@@ -2328,7 +2336,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x99 yfd w40 h36">
               <div className="t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_88"
                   name="field_88"
@@ -2341,7 +2349,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9a yfe w41 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_89"
                   name="field_89"
@@ -2354,7 +2362,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x99 yff w40 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_90"
                   name="field_90"
@@ -2367,7 +2375,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x74 yff w3f h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_91"
                   name="field_91"
@@ -2380,7 +2388,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 yff w1a h32">
               <div className="t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_92"
                   name="field_92"
@@ -2393,7 +2401,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x98 yff w3e h32">
               <div className="t m1 x50 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_93"
                   name="field_93"
@@ -2406,7 +2414,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 yfb w1a h32">
               <div className="t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_94"
                   name="chk_tecnico"
@@ -2419,7 +2427,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x74 yfb w3f h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_95"
                   name="field_95"
@@ -2432,7 +2440,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x99 yfb w40 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_96"
                   name="field_96"
@@ -2445,7 +2453,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9a y100 w41 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_97"
                   name="field_97"
@@ -2458,7 +2466,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x99 y101 w40 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_98"
                   name="field_98"
@@ -2471,7 +2479,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x74 y101 w3f h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_99"
                   name="field_99"
@@ -2484,7 +2492,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 y101 w1a h31">
               <div className="t m1 x3f h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_100"
                   name="chk_tecnologo"
@@ -2497,7 +2505,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x98 y101 w3e h31">
               <div className="t m1 x50 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_101"
                   name="field_101"
@@ -2510,7 +2518,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 yf8 w1a h31">
               <div className="t m1 x3f h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_102"
                   name="chk_profesional"
@@ -2523,7 +2531,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x74 yf8 w3f h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_103"
                   name="field_103"
@@ -2536,7 +2544,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x99 yf8 w40 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_104"
                   name="field_104"
@@ -2549,7 +2557,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9a y102 w41 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_105"
                   name="field_105"
@@ -2562,7 +2570,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x98 y103 w42 h32">
               <div className="t m1 x9b h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_106"
                   name="field_106"
@@ -2575,7 +2583,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9c y103 w43 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_107"
                   name="field_107"
@@ -2588,7 +2596,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x70 y103 w44 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_108"
                   name="field_108"
@@ -2601,7 +2609,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x63 y104 w45 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_109"
                   name="field_109"
@@ -2614,7 +2622,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x6f y104 w46 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_110"
                   name="field_110"
@@ -2627,7 +2635,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x95 y104 w34 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_111"
                   name="field_111"
@@ -2640,7 +2648,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x91 y105 w47 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_112"
                   name="field_112"
@@ -2653,7 +2661,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x20 y106 w48 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_113"
                   name="chk_si_sistemas"
@@ -2666,7 +2674,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x20 y107 w48 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_114"
                   name="field_114"
@@ -2679,7 +2687,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9d y107 w49 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_115"
                   name="field_115"
@@ -2692,7 +2700,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9d y106 w49 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_116"
                   name="chk_no_sistemas"
@@ -2705,7 +2713,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x20 y108 w4a h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_117"
                   name="field_117"
@@ -2718,7 +2726,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9e y109 w4b h3a">
               <div className="t m1 x42 h13 y10a ff8 fsf fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_118"
                   name="field_118"
@@ -2731,7 +2739,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x8a y10b w4c h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_119"
                   name="chk_si_idiomas"
@@ -2744,7 +2752,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x8a y10d w4c h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_120"
                   name="field_120"
@@ -2757,7 +2765,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xc y10e w4d h3b">
               <div className="t m1 x42 h1e ye6 ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_121"
                   name="field_121"
@@ -2770,7 +2778,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xc y10f w4e h3c">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_122"
                   name="field_122"
@@ -2783,7 +2791,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y110 w4f h3d">
               <div className="t m1 x42 h1e y10a ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_123"
                   name="field_123"
@@ -2796,7 +2804,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y111 w4f h3d">
               <div className="t m1 x42 h1e y10a ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_124"
                   name="field_124"
@@ -2809,7 +2817,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y112 w4f h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_125"
                   name="field_125"
@@ -2822,7 +2830,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y113 w4f h3e">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_126"
                   name="field_126"
@@ -2835,7 +2843,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y114 w4f h3e">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_127"
                   name="field_127"
@@ -2848,7 +2856,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y115 w4f h3e">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_128"
                   name="field_128"
@@ -2861,7 +2869,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y116 w4f h3f">
               <div className="t m1 x42 h11 ye6 ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_129"
                   name="field_129"
@@ -2874,7 +2882,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y117 w4f h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_130"
                   name="field_130"
@@ -2887,7 +2895,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y118 w4f h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_131"
                   name="field_131"
@@ -2900,7 +2908,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x9f y119 w4f h3c">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_132"
                   name="field_132"
@@ -2921,7 +2929,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
           <div className="pc pc3 w0 h0">
             {/* Page 3 Overlays */}
             {PAGE_3_COORDINATES.map((point) => (
-              <OverlayCheckbox
+              <FastOverlayCheckbox
                 key={point.id}
                 id={point.id}
                 left={point.left}
@@ -3238,7 +3246,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             <div className="t m1 xaf hd y4b ff6 fsc fc2 sc0 ls0 ws0">3</div>
             <div className="c x3 y156 w50 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_133"
                   name="field_133"
@@ -3251,7 +3259,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb0 y156 w51 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_134"
                   name="field_134"
@@ -3264,7 +3272,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb1 y156 w52 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_135"
                   name="field_135"
@@ -3277,7 +3285,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y157 w53 h46">
               <div className="t m1 x42 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_136"
                   name="field_136"
@@ -3290,7 +3298,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb2 y157 w54 h46">
               <div className="t m1 x42 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_137"
                   name="field_137"
@@ -3303,7 +3311,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb3 y157 w55 h46">
               <div className="t m1 x3f h1a y158 ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_138"
                   name="field_138"
@@ -3316,7 +3324,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb4 y157 w55 h46">
               <div className="t m1 x3f h1a y158 ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_139"
                   name="field_139"
@@ -3329,7 +3337,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x80 y159 w56 h47">
               <div className="t m1 x42 h13 y15a ff8 fsf fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_140"
                   name="field_140"
@@ -3342,7 +3350,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb5 y157 w57 h46">
               <div className="t m1 x3f h1a y158 ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_141"
                   name="field_141"
@@ -3355,7 +3363,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb6 y157 w58 h46">
               <div className="t m1 x3f h1a y158 ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_142"
                   name="field_142"
@@ -3368,7 +3376,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb7 y157 w59 h46">
               <div className="t m1 xb8 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_143"
                   name="field_143"
@@ -3381,7 +3389,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y15b w5a h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_144"
                   name="field_144"
@@ -3394,7 +3402,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x30 y15b w5b h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_145"
                   name="field_145"
@@ -3407,7 +3415,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x10 y15b w5c h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_146"
                   name="field_146"
@@ -3420,7 +3428,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xa0 y15b w5d h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_147"
                   name="field_147"
@@ -3433,7 +3441,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y15c w5e h46">
               <div className="t m1 x42 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_148"
                   name="field_148"
@@ -3446,7 +3454,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y15d w5e h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_149"
                   name="field_149"
@@ -3459,7 +3467,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y15e w5e h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_150"
                   name="field_150"
@@ -3472,7 +3480,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xa3 y159 w5f h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_151"
                   name="field_151"
@@ -3485,7 +3493,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y15f w5e h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_152"
                   name="field_152"
@@ -3498,7 +3506,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb9 y160 w60 h38">
               <div className="t m1 x42 h39 yfa ff8 fs27 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_153"
                   name="field_153"
@@ -3511,7 +3519,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y161 w61 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_154"
                   name="field_154"
@@ -3524,7 +3532,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb9 y162 w62 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_155"
                   name="field_155"
@@ -3537,7 +3545,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y163 w63 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_156"
                   name="field_156"
@@ -3550,7 +3558,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x80 y164 w56 h48">
               <div className="t m1 x42 h17 y165 ff8 fs11 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_157"
                   name="chk_no_distinciones"
@@ -3563,7 +3571,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xa3 y164 w64 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_158"
                   name="chk_si_distinciones"
@@ -3576,7 +3584,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y166 w63 h36">
               <div className="t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_159"
                   name="field_159"
@@ -3589,7 +3597,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y167 w63 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_160"
                   name="field_160"
@@ -3602,7 +3610,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y168 w63 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_161"
                   name="field_161"
@@ -3615,7 +3623,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xa0 y169 w5d h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_162"
                   name="field_162"
@@ -3628,7 +3636,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xba y169 w65 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_163"
                   name="field_163"
@@ -3641,7 +3649,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 y169 w66 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_164"
                   name="field_164"
@@ -3654,7 +3662,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y169 w67 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_165"
                   name="field_165"
@@ -3667,7 +3675,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xbe y176 w7a h3e">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_247"
                   name="field_247"
@@ -3681,7 +3689,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
 
             <div className="c xb7 y16a w68 h36">
               <div className="t m1 xb8 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_166"
                   name="field_166"
@@ -3694,7 +3702,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb6 y16a w57 h36">
               <div className="t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_167"
                   name="field_167"
@@ -3707,7 +3715,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb5 y16a w57 h36">
               <div className="t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_168"
                   name="field_168"
@@ -3720,7 +3728,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb4 y16a w55 h36">
               <div className="t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_169"
                   name="field_169"
@@ -3733,7 +3741,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb3 y16a w57 h36">
               <div className="t m1 x3f h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_170"
                   name="field_170"
@@ -3746,7 +3754,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xbb y16a w69 h36">
               <div className="t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_171"
                   name="field_171"
@@ -3759,7 +3767,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y16a w6a h36">
               <div className="t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_172"
                   name="field_172"
@@ -3772,7 +3780,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb1 y161 w52 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_173"
                   name="chk_no_deporte"
@@ -3785,7 +3793,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb0 y161 w51 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_174"
                   name="chk_si_deporte"
@@ -3798,7 +3806,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5e y16a w6b h36">
               <div className="t m1 xb8 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_175"
                   name="field_175"
@@ -3811,7 +3819,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5e y157 w6b h46">
               <div className="t m1 xb8 h1a y158 ff8 fs13 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_176"
                   name="field_176"
@@ -3824,7 +3832,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y16b w6c h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_177"
                   name="field_177"
@@ -3837,7 +3845,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb9 y16c w6d h3e">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_178"
                   name="field_178"
@@ -3850,7 +3858,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y16d w6e h3e">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_179"
                   name="field_179"
@@ -3863,7 +3871,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x80 y16e w6f h49">
               <div className="t m1 x42 h1e y16f ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_180"
                   name="field_180"
@@ -3876,7 +3884,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xa3 y16e w70 h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_181"
                   name="field_181"
@@ -3889,7 +3897,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y170 w6e h4a">
               <div className="t m1 x42 h1e y171 ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_182"
                   name="field_182"
@@ -3902,7 +3910,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y172 w6e h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_183"
                   name="field_183"
@@ -3915,7 +3923,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y173 w6e h3a">
               <div className="t m1 x42 h13 y10a ff8 fsf fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_184"
                   name="field_184"
@@ -3928,7 +3936,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xa0 y174 w71 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_185"
                   name="chk_eps_si"
@@ -3941,7 +3949,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xbc y174 w72 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_186"
                   name="chk_eps_no"
@@ -3954,7 +3962,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x32 y174 w73 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_187"
                   name="chk_pension_si"
@@ -3967,7 +3975,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y174 w74 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_188"
                   name="chk_pension_no"
@@ -3980,7 +3988,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb7 y175 w59 h32">
               <div className="t m1 xb8 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_189"
                   name="field_189"
@@ -3993,7 +4001,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb6 y175 w57 h32">
               <div className="t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_190"
                   name="field_190"
@@ -4006,7 +4014,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb5 y175 w57 h32">
               <div className="t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_191"
                   name="field_191"
@@ -4019,7 +4027,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5e y175 w75 h32">
               <div className="t m1 xb8 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_192"
                   name="field_192"
@@ -4032,7 +4040,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb4 y175 w57 h32">
               <div className="t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_193"
                   name="field_193"
@@ -4045,7 +4053,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb3 y175 w57 h32">
               <div className="t m1 x3f h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_194"
                   name="field_194"
@@ -4058,7 +4066,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xbb y175 w69 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_195"
                   name="field_195"
@@ -4071,7 +4079,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3 y175 w76 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_196"
                   name="field_196"
@@ -4084,7 +4092,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb1 y16b w77 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_197"
                   name="chk_no_ingreso"
@@ -4097,7 +4105,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xb0 y16b w78 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_198"
                   name="chk_si_ingreso"
@@ -4110,7 +4118,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xbd y176 w79 h3e">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_199"
                   name="field_199"
@@ -4123,7 +4131,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xbf y177 w7b h3c">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_200"
                   name="field_200"
@@ -4136,7 +4144,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x4f y177 w7c h3c">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_201"
                   name="field_201"
@@ -4149,7 +4157,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xc0 y177 w7d h3c">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_202"
                   name="field_202"
@@ -4162,7 +4170,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xc1 y176 w7e h3e">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_203"
                   name="field_203"
@@ -4183,7 +4191,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
           <div className="pc pc4 w0 h0">
             {/* Page 4 Overlays */}
             {PAGE_4_COORDINATES.map((point) => (
-              <OverlayCheckbox
+              <FastOverlayCheckbox
                 key={point.id}
                 id={point.id}
                 left={point.left}
@@ -4362,7 +4370,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
               }}
             />
             {/* ID Input next to C.C. No. line */}
-            <input
+            <FastInput
               type="text"
               name="cedula_firma"
               value={formData.cedula_firma}
@@ -4371,15 +4379,17 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
               style={{
                 position: "absolute",
                 left: "64.136%",
-                top: "39.970%", // Adjusted to align with Page 4 inner coordinates
+                top: "39.970%",
                 width: "22.113%",
                 height: "1.2%",
                 fontSize: "12px",
-                border: "none",
-                borderBottom: "1px solid #000", // Make it visible
+                borderTop: "none",
+                borderLeft: "none",
+                borderRight: "none",
+                borderBottom: "1px solid #000",
                 background: "transparent",
                 outline: "none",
-                color: "#000", // Ensure text is black
+                color: "#000",
                 zIndex: 1000001,
                 pointerEvents: "auto",
               }}
@@ -4643,7 +4653,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             <div className="t m1 xe5 hd y4b ff6 fsc fc2 sc0 ls0 ws0">4</div>
             <div className="c x6e y1c5 w7f h62">
               <div className="t m1 x42 h63 y1c6 ff8 fs45 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_204"
                   name="field_204"
@@ -4656,7 +4666,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x6e y1c7 w7f h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_205"
                   name="field_205"
@@ -4669,7 +4679,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x6e y1c8 w7f h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_206"
                   name="field_206"
@@ -4682,7 +4692,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x1a y1c7 w80 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_207"
                   name="field_207"
@@ -4695,7 +4705,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x1a y1c5 w80 h62">
               <div className="t m1 x42 h63 y1c6 ff8 fs45 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_208"
                   name="field_208"
@@ -4708,7 +4718,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x1a y1c8 w80 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_209"
                   name="field_209"
@@ -4721,7 +4731,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x14 y1c5 w81 h62">
               <div className="t m1 x42 h63 y1c6 ff8 fs45 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_210"
                   name="field_210"
@@ -4734,7 +4744,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x14 y1c7 w82 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_211"
                   name="field_211"
@@ -4747,7 +4757,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x14 y1c8 w82 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_212"
                   name="field_212"
@@ -4760,7 +4770,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xc3 y1c5 w83 h62">
               <div className="t m1 x42 h63 y1c6 ff8 fs45 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_213"
                   name="field_213"
@@ -4773,7 +4783,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xc3 y1c7 w83 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_214"
                   name="field_214"
@@ -4786,7 +4796,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xc3 y1c8 w83 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_215"
                   name="field_215"
@@ -4799,7 +4809,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3d y1c9 w84 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_216"
                   name="field_216"
@@ -4812,7 +4822,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3d y1ca w84 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_217"
                   name="field_217"
@@ -4825,7 +4835,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3d y1cb w84 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_218"
                   name="field_218"
@@ -4838,7 +4848,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3d y1cc w85 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_219"
                   name="field_219"
@@ -4851,7 +4861,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x3d y1cd w85 h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_220"
                   name="field_220"
@@ -4864,7 +4874,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x10 y1cc w86 h32">
               <div className="t m1 xe6 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_221"
                   name="field_221"
@@ -4877,7 +4887,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xe7 y1cc w87 h32">
               <div className="t m1 xe6 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_222"
                   name="field_222"
@@ -4890,7 +4900,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x10 y1cd w86 h31">
               <div className="t m1 xe6 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_223"
                   name="field_223"
@@ -4903,7 +4913,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xe7 y1cd w87 h31">
               <div className="t m1 xe6 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_224"
                   name="field_224"
@@ -4916,7 +4926,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xe8 y1cc w88 h32">
               <div className="t m1 xe9 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_225"
                   name="field_225"
@@ -4929,7 +4939,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xe8 y1cd w88 h31">
               <div className="t m1 xe9 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_226"
                   name="field_226"
@@ -4942,7 +4952,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x15 y1ce w89 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_227"
                   name="field_227"
@@ -4955,7 +4965,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x15 y1cf w89 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_228"
                   name="field_228"
@@ -4968,7 +4978,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x15 y1d0 w89 h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_229"
                   name="field_229"
@@ -4981,7 +4991,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x15 y1d1 w89 h36">
               <div className="t m1 x42 h37 yf5 ff8 fs26 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_230"
                   name="field_230"
@@ -4994,7 +5004,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xea y1d2 w8a h31">
               <div className="t m1 x42 h64 y1d3 ff8 fs46 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_231"
                   name="field_231"
@@ -5007,7 +5017,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xea y1d4 w8a h3a">
               <div className="t m1 x42 h13 y10a ff8 fsf fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_232"
                   name="field_232"
@@ -5020,7 +5030,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xea y1d5 w8a h32">
               <div className="t m1 x42 h33 ye8 ff8 fs24 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_233"
                   name="field_233"
@@ -5033,7 +5043,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xea y1d6 w8a h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_234"
                   name="field_234"
@@ -5046,7 +5056,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xea y1d7 w8a h65">
               <div className="t m1 x42 h1e y171 ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_235"
                   name="field_235"
@@ -5059,7 +5069,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xea y1d8 w8a h3d">
               <div className="t m1 x42 h1e y10a ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_236"
                   name="field_236"
@@ -5072,7 +5082,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xcd y1d9 w8b h3a">
               <div className="t m1 x42 h13 y10a ff8 fsf fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_237"
                   name="field_237"
@@ -5085,7 +5095,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xeb y1da w8c h31">
               <div className="t m1 x42 h1c ye6 ff8 fs14 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_238"
                   name="field_238"
@@ -5098,7 +5108,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xe2 y1db w8d h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_239"
                   name="chk_seleccionado_si"
@@ -5111,7 +5121,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xe2 y1dc w8d h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_240"
                   name="chk_seleccionado_no"
@@ -5124,7 +5134,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xec y1db w8e h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_241"
                   name="chk_elegible_si"
@@ -5137,7 +5147,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xe3 y1dd w8f h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_242"
                   name="field_242"
@@ -5150,7 +5160,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x5b y1de w90 h3e">
               <div className="t m1 x42 h11 y10c ff8 fse fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_243"
                   name="field_243"
@@ -5163,7 +5173,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c xe4 y1df w91 h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_244"
                   name="field_244"
@@ -5176,7 +5186,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x36 y1df w92 h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_245"
                   name="field_245"
@@ -5189,7 +5199,7 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
             </div>
             <div className="c x70 y1df w93 h31">
               <div className="t m1 x42 h1e y10c ff8 fs15 fc3 sc0 ls0 ws0">
-                <input
+                <FastInput
                   type="text"
                   id="field_246"
                   name="field_246"
@@ -5209,6 +5219,6 @@ const MinervaForm = ({ isCalibrationMode: externalCalibrationMode }) => {
       </div>
     </div>
   );
-};
+});
 
 export default MinervaForm;
