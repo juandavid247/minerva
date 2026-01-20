@@ -17,7 +17,6 @@
     "react-signature-canvas": "^1.1.0-alpha.2"
   },
   "devDependencies": {
-    "cheerio": "^1.1.2",
     "@eslint/js": "^9.39.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",

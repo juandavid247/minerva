@@ -284,12 +284,12 @@
 }
 
 .download-btn {
-  background: #dc3545;
-  color: white;
+  background: white;
+  color: black;
 }
 
 .download-btn:hover {
-  background: #c82333;
+  background: #f0f0f0;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }

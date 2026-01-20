@@ -1,0 +1,590 @@
+[
+  {
+    "fieldIndex": 0,
+    "fieldId": "field_49",
+    "yClass": "ye6",
+    "wrapperClass": "c x91 ye5 w2e h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 1,
+    "fieldId": "field_50",
+    "yClass": "ye6",
+    "wrapperClass": "c x92 ye5 w2f h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 2,
+    "fieldId": "field_51",
+    "yClass": "ye6",
+    "wrapperClass": "c x93 ye5 w30 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 3,
+    "fieldId": "field_52",
+    "yClass": "ye8",
+    "wrapperClass": "c x91 ye7 w31 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 4,
+    "fieldId": "field_53",
+    "yClass": "ye8",
+    "wrapperClass": "c x5d ye7 w32 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 5,
+    "fieldId": "field_54",
+    "yClass": "ye8",
+    "wrapperClass": "c x94 ye7 w33 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 6,
+    "fieldId": "field_55",
+    "yClass": "ye8",
+    "wrapperClass": "c x95 ye7 w34 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 7,
+    "fieldId": "field_56",
+    "yClass": "ye8",
+    "wrapperClass": "c x63 ye9 w35 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 8,
+    "fieldId": "field_57",
+    "yClass": "ye8",
+    "wrapperClass": "c x59 yea w36 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 9,
+    "fieldId": "field_58",
+    "yClass": "ye6",
+    "wrapperClass": "c x97 yeb w37 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 10,
+    "fieldId": "field_59",
+    "yClass": "ye8",
+    "wrapperClass": "c x91 yec w38 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 11,
+    "fieldId": "field_60",
+    "yClass": "ye8",
+    "wrapperClass": "c x92 yec w39 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 12,
+    "fieldId": "field_61",
+    "yClass": "ye8",
+    "wrapperClass": "c x5e yed w3a h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 13,
+    "fieldId": "field_62",
+    "yClass": "ye8",
+    "wrapperClass": "c x5e yee w3a h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 14,
+    "fieldId": "field_63",
+    "yClass": "ye8",
+    "wrapperClass": "c x5e yef w3a h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 15,
+    "fieldId": "field_64",
+    "yClass": "ye8",
+    "wrapperClass": "c x5e yf0 w3a h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 16,
+    "fieldId": "field_65",
+    "yClass": "ye8",
+    "wrapperClass": "c x91 yf1 w3b h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 17,
+    "fieldId": "field_66",
+    "yClass": "ye8",
+    "wrapperClass": "c x92 yee w3c h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 18,
+    "fieldId": "field_67",
+    "yClass": "ye8",
+    "wrapperClass": "c x91 yef w3b h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 19,
+    "fieldId": "field_68",
+    "yClass": "ye8",
+    "wrapperClass": "c x92 yf0 w3d h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 20,
+    "fieldId": "field_69",
+    "yClass": "ye8",
+    "wrapperClass": "c x92 yef w3d h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 21,
+    "fieldId": "field_70",
+    "yClass": "ye8",
+    "wrapperClass": "c x91 yf0 w3b h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 22,
+    "fieldId": "field_71",
+    "yClass": "yf3",
+    "wrapperClass": "c x98 yf2 w3e h34",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 23,
+    "fieldId": "field_72",
+    "yClass": "yf3",
+    "wrapperClass": "c x32 yf2 w1a h34",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 24,
+    "fieldId": "field_73",
+    "yClass": "yf3",
+    "wrapperClass": "c x74 yf2 w3f h34",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 25,
+    "fieldId": "field_74",
+    "yClass": "yf3",
+    "wrapperClass": "c x99 yf2 w40 h34",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 26,
+    "fieldId": "field_75",
+    "yClass": "yf5",
+    "wrapperClass": "c x9a yf4 w41 h36",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 27,
+    "fieldId": "field_76",
+    "yClass": "ye8",
+    "wrapperClass": "c x98 yf6 w3e h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 28,
+    "fieldId": "field_77",
+    "yClass": "ye8",
+    "wrapperClass": "c x32 yf6 w1a h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 29,
+    "fieldId": "field_78",
+    "yClass": "ye8",
+    "wrapperClass": "c x74 yf6 w3f h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 30,
+    "fieldId": "field_79",
+    "yClass": "ye8",
+    "wrapperClass": "c x99 yf6 w40 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 31,
+    "fieldId": "field_80",
+    "yClass": "ye8",
+    "wrapperClass": "c x9a yf7 w41 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 32,
+    "fieldId": "field_81",
+    "yClass": "ye6",
+    "wrapperClass": "c x98 yf8 w3e h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 33,
+    "fieldId": "field_82",
+    "yClass": "yfa",
+    "wrapperClass": "c x9a yf9 w41 h38",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 34,
+    "fieldId": "field_83",
+    "yClass": "ye8",
+    "wrapperClass": "c x98 yfb w3e h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 35,
+    "fieldId": "field_84",
+    "yClass": "ye6",
+    "wrapperClass": "c x9a yfc w41 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 36,
+    "fieldId": "field_85",
+    "yClass": "yf5",
+    "wrapperClass": "c x98 yfd w3e h36",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 37,
+    "fieldId": "field_86",
+    "yClass": "yf5",
+    "wrapperClass": "c x32 yfd w1a h36",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 38,
+    "fieldId": "field_87",
+    "yClass": "yf5",
+    "wrapperClass": "c x74 yfd w3f h36",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 39,
+    "fieldId": "field_88",
+    "yClass": "yf5",
+    "wrapperClass": "c x99 yfd w40 h36",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 40,
+    "fieldId": "field_89",
+    "yClass": "ye8",
+    "wrapperClass": "c x9a yfe w41 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 41,
+    "fieldId": "field_90",
+    "yClass": "ye8",
+    "wrapperClass": "c x99 yff w40 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 42,
+    "fieldId": "field_91",
+    "yClass": "ye8",
+    "wrapperClass": "c x74 yff w3f h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 43,
+    "fieldId": "field_92",
+    "yClass": "ye8",
+    "wrapperClass": "c x32 yff w1a h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 44,
+    "fieldId": "field_93",
+    "yClass": "ye8",
+    "wrapperClass": "c x98 yff w3e h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 45,
+    "fieldId": "field_94",
+    "yClass": "ye8",
+    "wrapperClass": "c x32 yfb w1a h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 46,
+    "fieldId": "field_95",
+    "yClass": "ye8",
+    "wrapperClass": "c x74 yfb w3f h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 47,
+    "fieldId": "field_96",
+    "yClass": "ye8",
+    "wrapperClass": "c x99 yfb w40 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 48,
+    "fieldId": "field_97",
+    "yClass": "ye6",
+    "wrapperClass": "c x9a y100 w41 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 49,
+    "fieldId": "field_98",
+    "yClass": "ye6",
+    "wrapperClass": "c x99 y101 w40 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 50,
+    "fieldId": "field_99",
+    "yClass": "ye6",
+    "wrapperClass": "c x74 y101 w3f h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 51,
+    "fieldId": "field_100",
+    "yClass": "ye6",
+    "wrapperClass": "c x32 y101 w1a h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 52,
+    "fieldId": "field_101",
+    "yClass": "ye6",
+    "wrapperClass": "c x98 y101 w3e h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 53,
+    "fieldId": "field_102",
+    "yClass": "ye6",
+    "wrapperClass": "c x32 yf8 w1a h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 54,
+    "fieldId": "field_103",
+    "yClass": "ye6",
+    "wrapperClass": "c x74 yf8 w3f h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 55,
+    "fieldId": "field_104",
+    "yClass": "ye6",
+    "wrapperClass": "c x99 yf8 w40 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 56,
+    "fieldId": "field_105",
+    "yClass": "ye8",
+    "wrapperClass": "c x9a y102 w41 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 57,
+    "fieldId": "field_106",
+    "yClass": "ye8",
+    "wrapperClass": "c x98 y103 w42 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 58,
+    "fieldId": "field_107",
+    "yClass": "ye8",
+    "wrapperClass": "c x9c y103 w43 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 59,
+    "fieldId": "field_108",
+    "yClass": "ye8",
+    "wrapperClass": "c x70 y103 w44 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 60,
+    "fieldId": "field_109",
+    "yClass": "ye8",
+    "wrapperClass": "c x63 y104 w45 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 61,
+    "fieldId": "field_110",
+    "yClass": "ye8",
+    "wrapperClass": "c x6f y104 w46 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 62,
+    "fieldId": "field_111",
+    "yClass": "ye8",
+    "wrapperClass": "c x95 y104 w34 h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 63,
+    "fieldId": "field_112",
+    "yClass": "ye6",
+    "wrapperClass": "c x91 y105 w47 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 64,
+    "fieldId": "field_113",
+    "yClass": "ye6",
+    "wrapperClass": "c x20 y106 w48 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 65,
+    "fieldId": "field_114",
+    "yClass": "ye6",
+    "wrapperClass": "c x20 y107 w48 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 66,
+    "fieldId": "field_115",
+    "yClass": "ye6",
+    "wrapperClass": "c x9d y107 w49 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 67,
+    "fieldId": "field_116",
+    "yClass": "ye6",
+    "wrapperClass": "c x9d y106 w49 h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 68,
+    "fieldId": "field_117",
+    "yClass": "ye8",
+    "wrapperClass": "c x20 y108 w4a h32",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 69,
+    "fieldId": "field_118",
+    "yClass": "y10a",
+    "wrapperClass": "c x9e y109 w4b h3a",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 70,
+    "fieldId": "field_119",
+    "yClass": "y10c",
+    "wrapperClass": "c x8a y10b w4c h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 71,
+    "fieldId": "field_120",
+    "yClass": "y10c",
+    "wrapperClass": "c x8a y10d w4c h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 72,
+    "fieldId": "field_121",
+    "yClass": "ye6",
+    "wrapperClass": "c xc y10e w4d h3b",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 73,
+    "fieldId": "field_122",
+    "yClass": "y10c",
+    "wrapperClass": "c xc y10f w4e h3c",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 74,
+    "fieldId": "field_123",
+    "yClass": "y10a",
+    "wrapperClass": "c x9f y110 w4f h3d",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 75,
+    "fieldId": "field_124",
+    "yClass": "y10a",
+    "wrapperClass": "c x9f y111 w4f h3d",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 76,
+    "fieldId": "field_125",
+    "yClass": "y10c",
+    "wrapperClass": "c x9f y112 w4f h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 77,
+    "fieldId": "field_126",
+    "yClass": "y10c",
+    "wrapperClass": "c x9f y113 w4f h3e",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 78,
+    "fieldId": "field_127",
+    "yClass": "y10c",
+    "wrapperClass": "c x9f y114 w4f h3e",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 79,
+    "fieldId": "field_128",
+    "yClass": "y10c",
+    "wrapperClass": "c x9f y115 w4f h3e",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 80,
+    "fieldId": "field_129",
+    "yClass": "ye6",
+    "wrapperClass": "c x9f y116 w4f h3f",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 81,
+    "fieldId": "field_130",
+    "yClass": "y10c",
+    "wrapperClass": "c x9f y117 w4f h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 82,
+    "fieldId": "field_131",
+    "yClass": "y10c",
+    "wrapperClass": "c x9f y118 w4f h31",
+    "nearbyLabels": []
+  },
+  {
+    "fieldIndex": 83,
+    "fieldId": "field_132",
+    "yClass": "y10c",
+    "wrapperClass": "c x9f y119 w4f h3c",
+    "nearbyLabels": []
+  }
+]

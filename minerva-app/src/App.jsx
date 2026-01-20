@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import './App.css'
 import MinervaForm from './components/MinervaForm'
+import pdfIcon from './assets/pdf-icon.png'
 
 function App() {
   const [zoom, setZoom] = useState(100);
@@ -41,29 +42,30 @@ function App() {
       <div className="control-panel no-print">
         {/* Action Buttons - Left Side */}
         <div className="action-buttons left-controls">
-          <button
+          {/* <button
             onClick={toggleCalibrationMode}
             className={`action-btn calibrate-btn ${isCalibrationMode ? 'active' : ''}`}
             title="Modo calibración"
           >
             {isCalibrationMode ? '🛑 Desactivar' : '🛠️ Calibrar'}
-          </button>
+          </button> */}
 
           <button
             onClick={handleDownloadPDF}
             className="action-btn download-btn"
             title="Descargar PDF"
           >
-            ⬇ Descargar PDF
+            <img src={pdfIcon} alt="Descargar PDF" style={{ width: '24px', height: '24px' }} />
+            Descargar
           </button>
 
-          <button
+          {/* <button
             onClick={handleSubmit}
             className="action-btn submit-btn"
             title="Enviar formulario"
           >
             📤 Enviar
-          </button>
+          </button> */}
         </div>
 
         {/* Zoom Controls - Right Side */}
