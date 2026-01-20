@@ -10245,17 +10245,12 @@
 @media print {
   .photo-overlay {
 
-    position: absolute;
-    width: 128px;
-    height: 173px;
-    transform: translate(743px, 220px);
-    z-index: 10;
+    transform: none;
+    top: 195.56pt;
+    left: 660.44pt;
+    width: 113.78pt;
+    height: 153.78pt;
   }
 
-  .signature-overlay {
-    transform: none;
-    position: relative;
-    top: -60px;
-    left: 450px;
-  }
+
 }

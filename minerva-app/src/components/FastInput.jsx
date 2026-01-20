@@ -1,19 +1,9 @@
 import React, { useState, useRef, useCallback } from "react";
 
 const FastInput = React.memo(({ value, onChange, ...props }) => {
-    const isInitialMount = useRef(true);
     const [localValue, setLocalValue] = useState(value || "");
     const debounceTimerRef = useRef(null);
     const lastSyncedValueRef = useRef(value || "");
-
-    // Only sync with parent value on initial mount
-    if (isInitialMount.current) {
-        isInitialMount.current = false;
-        if (value !== undefined && value !== localValue) {
-            setLocalValue(value);
-            lastSyncedValueRef.current = value;
-        }
-    }
 
     const syncToParent = useCallback((newValue) => {
         // Only sync if value actually changed

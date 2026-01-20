@@ -27,11 +27,6 @@ const PhotoUpload = ({ style }) => {
         zIndex: 1001,
     };
 
-    const placeholderStyle = {
-        textAlign: 'center',
-        color: '#999',
-        fontSize: '12px'
-    };
 
     return (
         <div className="photo-upload-container" style={containerStyle}>

@@ -1,16 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 const FastOverlayCheckbox = React.memo(({ left, top, checked, onChange, id }) => {
-    const isInitialMount = useRef(true);
     const [localChecked, setLocalChecked] = useState(checked || false);
-
-    // Only sync with parent value on initial mount
-    if (isInitialMount.current) {
-        isInitialMount.current = false;
-        if (checked !== undefined && checked !== localChecked) {
-            setLocalChecked(checked);
-        }
-    }
 
     const handleClick = (e) => {
         e.stopPropagation();

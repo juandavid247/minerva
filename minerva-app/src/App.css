@@ -67,6 +67,8 @@
   .photo-upload-container {
     position: absolute !important;
     display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   /* Remove page break after the last page */
